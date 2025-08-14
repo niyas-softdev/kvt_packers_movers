@@ -74,7 +74,7 @@ export default function ServicesPage() {
       name: 'Local Movers & Distribution',
       icon: TruckIcon,
       description: 'Reliable local shifting and last-mile delivery services within the city.',
-      image: '/img/gallery/30.jpg ', // Add this image to your public folder
+      image: '/img/gallery/30.jpg',
       features: ['Same-day local moving', 'Last-mile delivery', 'Local warehousing', 'Route optimization']
     }
   ];
