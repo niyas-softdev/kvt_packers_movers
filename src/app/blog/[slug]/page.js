@@ -1,8 +1,6 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { 
   CalendarIcon, 
   ClockIcon, 
@@ -13,26 +11,8 @@ import {
   ChatBubbleLeftIcon
 } from '@heroicons/react/24/outline';
 
-export default function BlogPostPage() {
-  const params = useParams();
-  const router = useRouter();
-  const [isVisible, setIsVisible] = useState(false);
-  const [post, setPost] = useState(null);
-  const [relatedPosts, setRelatedPosts] = useState([]);
-
-  useEffect(() => {
-    setIsVisible(true);
-    // Simulate fetching post data based on slug
-    const postData = getPostBySlug(params.slug);
-    setPost(postData);
-    
-    if (postData) {
-      setRelatedPosts(getAllOtherPosts(postData.id));
-    }
-  }, [params.slug]);
-
-  const getPostBySlug = (slug) => {
-    const allPosts = [
+// Single source of truth for posts
+const POSTS = [
       {
         id: 1,
         title: "Trusted Heavy Item Relocation Experts in Anna Nagar, Chennai",
@@ -277,129 +257,26 @@ export default function BlogPostPage() {
           <p>Trust KVT Packers and Movers for your next corporate relocation in Chennai. We deliver professional, reliable, and confidential moving services for businesses of all sizes.</p>
         `
       }
-    ];
-    return allPosts.find(p => p.slug === slug) || null;
-  };
+];
 
-  // Get all posts except the current one for 'Read More'
-  const getAllOtherPosts = (currentId) => {
-    const allPosts = [
-      {
-        id: 1,
-        title: "Trusted Heavy Item Relocation Experts in Anna Nagar, Chennai",
-        excerpt: "Professional heavy item relocation services in Anna Nagar, Chennai. We specialize in moving steel lockers, machinery, and heavy equipment with care and precision.",
-        image: "/img/location/anna_nagar.jpg",
-        date: "Nov 04, 2024",
-        author: "KVT Team",
-        readTime: "5 min read",
-        category: "Heavy Relocation",
-        slug: "heavy-item-relocation-anna-nagar-chennai"
-      },
-      {
-        id: 2,
-        title: "House shifting services in Arumbakkam",
-        excerpt: "Complete house shifting services in Arumbakkam with professional packing, loading, and unloading. Trusted by thousands of families.",
-        image: "/img/location/arumbakkam.jpg",
-        date: "Nov 01, 2024",
-        author: "KVT Team",
-        readTime: "4 min read",
-        category: "Local Moving",
-        slug: "house-shifting-services-arumbakkam"
-      },
-      {
-        id: 3,
-        title: "House shifting from Chennai to Nagercoil",
-        excerpt: "Reliable house shifting services from Chennai to Nagercoil. Door-to-door service with complete packing and unpacking assistance.",
-        image: "/img/location/nagercoil.jpg",
-        date: "Nov 01, 2024",
-        author: "KVT Team",
-        readTime: "6 min read",
-        category: "Intercity Moving",
-        slug: "house-shifting-chennai-to-nagercoil"
-      },
-      {
-        id: 4,
-        title: "Medical devices Relocation from Chennai to Bangalore",
-        excerpt: "Specialized medical device relocation services with temperature-controlled transportation and careful handling of sensitive equipment.",
-        image: "/img/location/bengalore.jpg",
-        date: "Oct 31, 2024",
-        author: "KVT Team",
-        readTime: "7 min read",
-        category: "Specialist Moving",
-        slug: "medical-devices-relocation-chennai-bangalore"
-      },
-      {
-        id: 5,
-        title: "Wooden Crate Packing To Abroad",
-        excerpt: "Professional wooden crate packing services for international moves. Custom crating solutions for fragile and valuable items.",
-        image: "/img/location/abroad.jpg",
-        date: "Oct 31, 2024",
-        author: "KVT Team",
-        readTime: "8 min read",
-        category: "International Moving",
-        slug: "wooden-crate-packing-abroad"
-      },
-      {
-        id: 6,
-        title: "House shifting from Chennai to Bangalore",
-        excerpt: "25 years of experience in house shifting from Chennai to Bangalore. Complete end-to-end moving solutions with insurance coverage.",
-        image: "/img/location/bengalore1.jpg",
-        date: "Oct 29, 2024",
-        author: "KVT Team",
-        readTime: "5 min read",
-        category: "Intercity Moving",
-        slug: "house-shifting-chennai-bangalore"
-      },
-      {
-        id: 7,
-        title: "House shifting from Chennai to Vellore",
-        excerpt: "Hassle-free house shifting from Chennai to Vellore. Professional team ensures safe and timely delivery of your belongings.",
-        image: "/img/location/vellore.png",
-        date: "Oct 29, 2024",
-        author: "KVT Team",
-        readTime: "4 min read",
-        category: "Intercity Moving",
-        slug: "house-shifting-chennai-vellore"
-      },
-      {
-        id: 8,
-        title: "House shifting from Chennai to Kakinada",
-        excerpt: "Reliable house shifting services from Chennai to Kakinada. We handle everything from packing to final setup at your new home.",
-        image: "/img/location/kakinada1.jpg",
-        date: "Oct 29, 2024",
-        author: "KVT Team",
-        readTime: "6 min read",
-        category: "Intercity Moving",
-        slug: "house-shifting-chennai-kakinada"
-      }
-    ];
-    return allPosts.filter(p => p.id !== currentId);
-  };
+export function generateStaticParams() {
+  return POSTS.map(p => ({ slug: p.slug }));
+}
 
+export default function BlogPostPage({ params }) {
+  const slug = params?.slug;
+  const post = POSTS.find(p => p.slug === slug);
   if (!post) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Post Not Found</h1>
-          <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
-          <Link
-            href="/blog"
-            className="inline-flex items-center text-green-600 hover:text-green-700 font-semibold"
-          >
-            <ArrowLeftIcon className="w-4 h-4 mr-2" />
-            Back to Blog
-          </Link>
-        </div>
-      </div>
-    );
+    notFound();
   }
+  const relatedPosts = POSTS.filter(p => p.id !== post.id).slice(0, 6);
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-green-700 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}> 
+          <div>
             <Link
               href="/blog"
               className="inline-flex items-center text-blue-200 hover:text-white mb-6 transition-colors sticky top-4 z-20 bg-blue-900/80 px-3 py-1 rounded-full shadow-lg backdrop-blur"
@@ -442,30 +319,33 @@ export default function BlogPostPage() {
                 src={post.image}
                 alt={post.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 800px"
                 className="object-cover rounded-b-2xl shadow-lg"
-                placeholder="blur"
-                blurDataURL="/img/packers.jpg" // fallback, ideally use a real blurDataURL per image
                 priority
               />
             </div>
             {/* Article Content */}
             <div className="p-8">
               <div className="prose prose-lg max-w-none">
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                {post.content ? (
+                  <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                ) : (
+                  <p>{post.excerpt}</p>
+                )}
               </div>
               {/* Article Actions */}
               <div className="mt-8 pt-8 border-t border-gray-200">
                 <div className="flex items-center justify-between flex-wrap gap-4">
                   <div className="flex items-center gap-4">
-                    <button className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors">
+                    <button className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors" aria-label="Share this post">
                       <ShareIcon className="w-5 h-5" />
                       Share
                     </button>
-                    <button className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors">
+                    <button className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors" aria-label="Save this post">
                       <BookmarkIcon className="w-5 h-5" />
                       Save
                     </button>
-                    <button className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors">
+                    <button className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors" aria-label="Comment on this post">
                       <ChatBubbleLeftIcon className="w-5 h-5" />
                       Comment
                     </button>
@@ -515,8 +395,7 @@ export default function BlogPostPage() {
                         alt={relatedPost.title}
                         fill
                         className="object-cover rounded-t-xl"
-                        placeholder="blur"
-                        blurDataURL="/img/packers.jpg"
+                        sizes="(max-width: 640px) 100vw, 400px"
                       />
                       <div className="absolute top-3 left-3">
                         <span className="bg-green-600 text-white px-2 py-1 rounded text-xs font-medium shadow">

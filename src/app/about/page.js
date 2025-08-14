@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import CountUp from 'react-countup';
+
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import ClientLogos from '../components/ClientLogos';
 
@@ -22,7 +23,6 @@ import {
   GlobeAltIcon,
   TrophyIcon,
   HomeIcon,
-  OfficeBuildingIcon,
   CogIcon
 } from '@heroicons/react/24/outline';
 
@@ -59,7 +59,7 @@ export default function AboutPage() {
       title: "Corporate Shifting",
       description: "Seamless office relocation services minimizing business disruption and downtime.",
       image: "/img/team.jpg",
-      icon: OfficeBuildingIcon
+      icon: BuildingOfficeIcon
     },
     {
       title: "Industrial Movers",
@@ -140,7 +140,7 @@ export default function AboutPage() {
         {/* Buttons */}
         <div className="flex gap-4 animate-fadeIn stagger-3">
           <Link
-            href="/quote"
+            href="/contact"
             className="btn-animate bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold"
           >
             Get Quote
