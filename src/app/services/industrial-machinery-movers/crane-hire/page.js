@@ -31,7 +31,7 @@ export default function CraneHirePage() {
               <li>Hourly, daily and project hire</li>
             </ul>
             <div className="mt-6 flex gap-3">
-              <Link href="/quote" className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">Get Quote</Link>
+              <Link href="/contact" className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">Get Quote</Link>
               <a href="tel:+917550016167" className="bg-white border px-6 py-3 rounded-lg font-semibold text-gray-900 hover:bg-gray-50">Call</a>
             </div>
           </div>

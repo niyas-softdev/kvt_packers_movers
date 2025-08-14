@@ -1,8 +1,10 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 import ClientLogos from '../components/ClientLogos';
+import Link from 'next/link';
 import { 
   ArrowLeftIcon,
   MagnifyingGlassIcon,
@@ -21,10 +23,18 @@ export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { ref, inView } = useInView({ triggerOnce: true });
+  const [startCount, setStartCount] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  useEffect(() => {
+    if (inView) {
+      setStartCount(true);
+    }
+  }, [inView]);
 
   const categories = [
     { id: 'all', name: 'All Photos', icon: PhotoIcon },
@@ -225,12 +235,26 @@ export default function GalleryPage() {
       {/* Stats Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div 
+            ref={ref}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+          >
             <div className="text-center">
               <div className="bg-blue-600 text-white p-6 rounded-xl shadow-lg mb-4">
                 <PhotoIcon className="w-8 h-8 mx-auto" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{galleryImages.length}+</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">
+                {startCount && (
+                  <CountUp
+                    end={galleryImages.length}
+                    duration={4}
+                    useEasing={true}
+                    start={0}
+                    delay={0.2}
+                  />
+                )}
+                {!startCount && galleryImages.length}+
+              </div>
               <div className="text-gray-600">Total Photos</div>
             </div>
             
@@ -238,7 +262,18 @@ export default function GalleryPage() {
               <div className="bg-green-600 text-white p-6 rounded-xl shadow-lg mb-4">
                 <TruckIcon className="w-8 h-8 mx-auto" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">500+</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">
+                {startCount && (
+                  <CountUp
+                    end={500}
+                    duration={4}
+                    useEasing={true}
+                    start={0}
+                    delay={0.4}
+                  />
+                )}
+                {!startCount && '500'}+
+              </div>
               <div className="text-gray-600">Successful Moves</div>
             </div>
             
@@ -246,7 +281,18 @@ export default function GalleryPage() {
               <div className="bg-purple-600 text-white p-6 rounded-xl shadow-lg mb-4">
                 <UserGroupIcon className="w-8 h-8 mx-auto" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">25+</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">
+                {startCount && (
+                  <CountUp
+                    end={25}
+                    duration={4}
+                    useEasing={true}
+                    start={0}
+                    delay={0.6}
+                  />
+                )}
+                {!startCount && '25'}+
+              </div>
               <div className="text-gray-600">Team Members</div>
             </div>
             
@@ -254,7 +300,18 @@ export default function GalleryPage() {
               <div className="bg-orange-600 text-white p-6 rounded-xl shadow-lg mb-4">
                 <StarIcon className="w-8 h-8 mx-auto" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">100%</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">
+                {startCount && (
+                  <CountUp
+                    end={100}
+                    duration={4}
+                    useEasing={true}
+                    start={0}
+                    delay={0.8}
+                  />
+                )}
+                {!startCount && '100'}%
+              </div>
               <div className="text-gray-600">Satisfaction</div>
             </div>
           </div>

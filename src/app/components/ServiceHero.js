@@ -43,7 +43,7 @@ export default function ServiceHero({
                 {description}
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link href="/quote" className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700">
+                <Link href="/contact" className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700">
                   Get Quote
                 </Link>
                 <a href="tel:+917550016167" className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100">

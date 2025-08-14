@@ -81,9 +81,12 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/services/specialist" className="hover:text-white">
-                Specialist Movers
+              <Link href="/services/residential" className="hover:text-white">
+                Residential Movers
               </Link>
+            </li>
+            <li>
+              
             </li>
             <li>
               <Link href="/services/international" className="hover:text-white">

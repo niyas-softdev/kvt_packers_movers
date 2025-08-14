@@ -1,6 +1,5 @@
 'use client';
-
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -165,7 +164,7 @@ export default function IndustrialMachineryMoversPage() {
                     mission-critical machines safely and on time.
                   </p>
                   <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-fadeIn stagger-3">
-                    <Link href="/quote" className="btn-animate bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700">
+                                            <Link href="/contact" className="btn-animate bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700">
                       Get Quote
                     </Link>
                     <a href="tel:+917550016167" className="btn-animate bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100">
@@ -309,7 +308,10 @@ export default function IndustrialMachineryMoversPage() {
                     >
                       <div className="flex items-center gap-4 mb-4">
                         <div className="p-3 bg-blue-600 rounded-lg">
-                          <feature.icon className="w-6 h-6 text-white" />
+                          {(() => {
+                            const IconComponent = feature.icon;
+                            return <IconComponent className="w-6 h-6 text-white" />;
+                          })()}
                         </div>
                         <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
                       </div>
@@ -455,7 +457,7 @@ export default function IndustrialMachineryMoversPage() {
                 ))}
               </div>
               <div className="mt-6 flex flex-col sm:flex-row gap-4">
-                <Link href="/quote" className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-all">Get Free Quote</Link>
+                <Link href="/contact" className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-all">Get Free Quote</Link>
                 <a href="tel:+917550016167" className="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all inline-flex items-center gap-2"><PhoneIcon className="w-5 h-5"/>Call</a>
               </div>
             </div>
@@ -484,7 +486,7 @@ export default function IndustrialMachineryMoversPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ready to Move Your Plant?</h2>
           <p className="text-xl text-gray-800 mb-8">Consult our specialists for a safe, efficient industrial relocation.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/quote" className="bg-blue-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors transform hover:scale-105">
+                            <Link href="/contact" className="bg-blue-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors transform hover:scale-105">
               Get Free Quote
             </Link>
             <a href="tel:+917550016167" className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105">

@@ -19,17 +19,19 @@ export default function Navbar() {
     { name: 'Blog', href: '/blog' },
     { name: 'Testimonials', href: '/testimonials' },
 
-    { name: 'About', href: '/about' },
+    { name: 'Who We Are', href: '/about' },
     {
       name: 'Services',
       subItems: [
         { name: 'Service Details', href: '/services' },
-        { name: 'Industrial Mechinery Movers', href: '/services/industrial-machinery-movers' },
+        { name: 'Industrial Machinery Movers', href: '/services/industrial-machinery-movers' },
 
         { name: 'Local Movers', href: '/services/local' },
+        { name: 'Residential', href: '/services/residential' },
         { name: 'International', href: '/services/international' },
         { name: 'Corporate', href: '/services/corporate' },
         { name: 'Distribution', href: '/services/distribution' },
+
 
       ],
     },

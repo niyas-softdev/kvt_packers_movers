@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import ServiceHero from '../../components/ServiceHero';
 import Link from 'next/link';
@@ -134,7 +134,10 @@ export default function DistributionPage() {
                     >
                       <div className="flex items-center gap-4 mb-4">
                         <div className="p-3 bg-indigo-600 rounded-lg">
-                          <feature.icon className="w-6 h-6 text-white" />
+                          {(() => {
+                            const IconComponent = feature.icon;
+                            return <IconComponent className="w-6 h-6 text-white" />;
+                          })()}
                         </div>
                         <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
                       </div>
@@ -270,7 +273,7 @@ export default function DistributionPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/quote"
+              href="/contact"
               className="bg-blue-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors transform hover:scale-105"
             >
               Get Free Quote

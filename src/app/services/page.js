@@ -1,6 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 import ServiceHero from '../components/ServiceHero';
 import ClientLogos from '../components/ClientLogos';
 import Link from 'next/link';
@@ -13,16 +15,26 @@ import {
   GlobeAltIcon,
   CarIcon,
   UserGroupIcon,
-  CogIcon
+  CogIcon,
+  StarIcon,
+  CheckCircleIcon
 } from '@heroicons/react/24/outline';
 
 export default function ServicesPage() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeService, setActiveService] = useState('industrial-machinery-movers');
+  const { ref, inView } = useInView({ triggerOnce: true });
+  const [startCount, setStartCount] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  useEffect(() => {
+    if (inView) {
+      setStartCount(true);
+    }
+  }, [inView]);
 
   const services = [
     {
@@ -171,12 +183,6 @@ export default function ServicesPage() {
                               assistance. We handle all aspects of international moves including packing, shipping, customs procedures, 
                               and final delivery. Our global network ensures reliable service across borders.
                             </>
-                          ) : currentService.id === 'vehicle' ? (
-                            <>
-                              Our vehicle transportation service provides safe and secure transport for cars, bikes, and other vehicles. 
-                              We use enclosed transport options with comprehensive insurance coverage and real-time tracking systems. 
-                              Our door-to-door service ensures convenience and peace of mind.
-                            </>
                           ) : (
                             <>
                               Our full-service moving solution provides end-to-end support for all your relocation needs. From initial 
@@ -224,7 +230,7 @@ export default function ServicesPage() {
                           Learn More
                         </Link>
                         <Link
-                          href="/quote"
+                          href="/contact"
                           className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
                         >
                           Get Quote
@@ -234,6 +240,100 @@ export default function ServicesPage() {
                   </div>
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Achievements</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Trusted by thousands of customers across India for reliable and professional moving services
+            </p>
+          </div>
+          
+          <div 
+            ref={ref}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            <div className="text-center">
+              <div className="bg-blue-600 text-white p-6 rounded-xl shadow-lg mb-4">
+                <TruckIcon className="w-8 h-8 mx-auto" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">
+                {startCount && (
+                  <CountUp
+                    end={5000}
+                    duration={4}
+                    separator=","
+                    useEasing={true}
+                    start={0}
+                    delay={0.2}
+                  />
+                )}
+                +
+              </div>
+              <div className="text-gray-600">Successful Moves</div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-green-600 text-white p-6 rounded-xl shadow-lg mb-4">
+                <UserGroupIcon className="w-8 h-8 mx-auto" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">
+                {startCount && (
+                  <CountUp
+                    end={1000}
+                    duration={4}
+                    useEasing={true}
+                    start={0}
+                    delay={0.4}
+                  />
+                )}
+                +
+              </div>
+              <div className="text-gray-600">Happy Customers</div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-purple-600 text-white p-6 rounded-xl shadow-lg mb-4">
+                <StarIcon className="w-8 h-8 mx-auto" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">
+                {startCount && (
+                  <CountUp
+                    end={25}
+                    duration={4}
+                    useEasing={true}
+                    start={0}
+                    delay={0.6}
+                  />
+                )}
+                +
+              </div>
+              <div className="text-gray-600">Years Experience</div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-orange-600 text-white p-6 rounded-xl shadow-lg mb-4">
+                <CheckCircleIcon className="w-8 h-8 mx-auto" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">
+                {startCount && (
+                  <CountUp
+                    end={100}
+                    duration={4}
+                    useEasing={true}
+                    start={0}
+                    delay={0.8}
+                  />
+                )}
+                %
+              </div>
+              <div className="text-gray-600">Satisfaction Rate</div>
             </div>
           </div>
         </div>
@@ -257,7 +357,7 @@ export default function ServicesPage() {
             {[
               {
                 question: "How do I book your moving services?",
-                answer: "You can book our services by calling us at +91 75500 16167, filling out our online quote form, or visiting our office in Chennai. Our team will assess your requirements and provide a detailed quote."
+                answer: "You can book our services by calling us at +91 75500 16167, filling out our online contact form, or visiting our office in Chennai. Our team will assess your requirements and provide a detailed quote."
               },
               {
                 question: "What areas do you serve?",
@@ -293,8 +393,8 @@ export default function ServicesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/quote"
-              className="bg-blue-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors transform hover:scale-105"
+              href="/contact"
+              className="bg-blue-900 text-white px-8 py-3 rounded-semibold hover:bg-blue-800 transition-colors transform hover:scale-105"
             >
               Get Free Quote
             </Link>
