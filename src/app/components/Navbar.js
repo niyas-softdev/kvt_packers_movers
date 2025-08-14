@@ -24,9 +24,9 @@ export default function Navbar() {
       name: 'Services',
       subItems: [
         { name: 'Service Details', href: '/services' },
+        { name: 'Industrial Mechinery Movers', href: '/services/industrial-machinery-movers' },
 
         { name: 'Local Movers', href: '/services/local' },
-        { name: 'Specialist Movers', href: '/services/specialist' },
         { name: 'International', href: '/services/international' },
         { name: 'Corporate', href: '/services/corporate' },
         { name: 'Distribution', href: '/services/distribution' },

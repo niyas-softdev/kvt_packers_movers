@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import ClientLogos from '../components/ClientLogos';
 import { ArrowLeftIcon, StarIcon, PlayIcon } from '@heroicons/react/24/outline';
 
 export default function TestimonialsPage() {
@@ -330,6 +331,9 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </section>
+
+      {/* Client Logos */}
+      <ClientLogos title="Trusted by these clients" />
 
       {/* Video Testimonials Section */}
       <section className="py-20 bg-white">

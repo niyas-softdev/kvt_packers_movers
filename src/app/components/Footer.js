@@ -122,7 +122,7 @@ export default function Footer() {
             <div>
               <p className="font-semibold">Address</p>
               <p>
-                2nd floor, 5/11, Anna Avenue, Near DG Vaishnav College Rd,
+                2nd floor, 5/11, Anna Avenue, Opp CMBT, Near Tamil Nadu Election Commission,<br/> Backside DG Vaishnav College Rd,
                 Arumbakkam, Chennai, Tamil Nadu
               </p>
             </div>

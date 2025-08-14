@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import ServiceHero from '../../components/ServiceHero';
 import Link from 'next/link';
 import { 
   ArrowLeftIcon,
@@ -82,61 +83,13 @@ export default function CorporateMoversPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-green-700 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
-        </div>
-        
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-7xl mx-auto">
-            <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <Link
-                href="/services"
-                className="inline-flex items-center text-blue-200 hover:text-white mb-6 transition-colors"
-              >
-                <ArrowLeftIcon className="w-4 h-4 mr-2" />
-                Back to Services
-              </Link>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                    Corporate Movers
-                  </h1>
-                  <p className="text-xl text-blue-100 mb-8">
-                    Seamless office relocation with minimal business disruption. We specialize in corporate moves that keep your business running smoothly.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Link
-                      href="/quote"
-                      className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105"
-                    >
-                      Get Quote
-                    </Link>
-                    <a
-                      href="tel:+917550016167"
-                      className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
-                    >
-                      Call Now
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="relative">
-                  <Image
-                    src="/img/team.jpg"
-                    alt="Corporate Moving"
-                    width={600}
-                    height={400}
-                    className="rounded-xl shadow-2xl"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        badgeText="Office & IT Relocation"
+        title="Corporate Movers"
+        description="Seamless office relocation with minimal business disruption. We specialize in corporate moves that keep your business running smoothly."
+        imageSrc="/img/team.jpg"
+        imageAlt="Corporate Moving"
+      />
 
       {/* Main Content */}
       <section className="py-16">

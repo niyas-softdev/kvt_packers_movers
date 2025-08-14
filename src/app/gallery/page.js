@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import ClientLogos from '../components/ClientLogos';
 import { 
   ArrowLeftIcon,
   MagnifyingGlassIcon,
@@ -133,6 +134,9 @@ export default function GalleryPage() {
           </div>
         </div>
       </section>
+
+      {/* Client Logos */}
+      <ClientLogos title="Our clients across industries" />
 
 
       {/* Filter Section */}

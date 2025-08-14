@@ -1,6 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import ServiceHero from '../components/ServiceHero';
+import ClientLogos from '../components/ClientLogos';
 import Link from 'next/link';
 import { 
   ArrowRightIcon, 
@@ -16,7 +18,7 @@ import {
 
 export default function ServicesPage() {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeService, setActiveService] = useState('corporate');
+  const [activeService, setActiveService] = useState('industrial-machinery-movers');
 
   useEffect(() => {
     setIsVisible(true);
@@ -40,6 +42,14 @@ export default function ServicesPage() {
       features: ['Minimized downtime', 'IT infrastructure handling', 'Customized plans', 'Confidentiality']
     },
     {
+      id: 'industrial-machinery-movers',
+      name: 'Industrial Machinery Movers',
+      icon: CogIcon,
+      description: 'Heavy machinery moving, rigging and plant relocation with safety-first execution.',
+      image: '/img/vechical/forklift.jpg',
+      features: ['Rigging & lifting plans', 'Specialized transport fleet', 'Precision installation', 'Insurance & permits']
+    },
+    {
       id: 'international',
       name: 'International Movers',
       icon: GlobeAltIcon,
@@ -54,14 +64,6 @@ export default function ServicesPage() {
       description: 'Reliable local shifting and last-mile delivery services within the city.',
       image: '/img/gallery/30.jpg ', // Add this image to your public folder
       features: ['Same-day local moving', 'Last-mile delivery', 'Local warehousing', 'Route optimization']
-    },
-    {
-      id: 'specialist',
-      name: 'Specialist Movers',
-      icon: UserGroupIcon,
-      description: 'Specialized moving for delicate and valuable items.',
-      image: '/img/van.jpg',
-      features: ['Piano moving', 'Art transportation', 'Medical equipment', 'Temperature control']
     }
   ];
   
@@ -70,31 +72,13 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-green-700 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
-        </div>
-        
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-7xl mx-auto text-center">
-            <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                Service Details
-              </h1>
-              <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                Professional moving services tailored to your specific needs
-              </p>
-              <div className="flex items-center justify-center text-blue-200 text-sm">
-                <Link href="/" className="hover:text-white transition-colors">Home</Link>
-                <span className="mx-2">›</span>
-                <span className="text-white">Service Details</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        badgeText="Professional Moving Services"
+        title={currentService ? currentService.name : 'Service Details'}
+        description={currentService ? currentService.description : 'Professional moving services tailored to your specific needs.'}
+        imageSrc={currentService ? currentService.image : '/img/packing_truck.jpg'}
+        imageAlt={currentService ? currentService.name : 'Service Details'}
+      />
 
       {/* Main Content */}
       <section className="py-16">
@@ -193,12 +177,6 @@ export default function ServicesPage() {
                               We use enclosed transport options with comprehensive insurance coverage and real-time tracking systems. 
                               Our door-to-door service ensures convenience and peace of mind.
                             </>
-                          ) : currentService.id === 'specialist' ? (
-                            <>
-                              Our specialist movers handle delicate and valuable items requiring special care. We provide temperature-controlled 
-                              transportation for medical equipment, specialized handling for pianos and artwork, and secure transport for 
-                              sensitive materials. Our expertise ensures safe delivery of your most precious items.
-                            </>
                           ) : (
                             <>
                               Our full-service moving solution provides end-to-end support for all your relocation needs. From initial 
@@ -260,6 +238,9 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Client Logos */}
+      <ClientLogos />
 
       {/* FAQ Section */}
       <section className="py-16 bg-white">

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import Image from "next/image";
+import ClientLogos from './components/ClientLogos';
 import Link from 'next/link';
 import { 
   PhoneIcon,
@@ -413,6 +414,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Client Logos */}
+      <ClientLogos />
 
       {/* Recent Work Section */}
       {/* <section className="py-16 bg-gray-50">

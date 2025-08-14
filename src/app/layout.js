@@ -2,6 +2,7 @@
 import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import FloatingContact from './components/FloatingContact';
 
 export const metadata = {
   title: 'KVT Packers and Movers',
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         </main>
 
         <Footer />
+        <FloatingContact />
       </body>
     </html>
   );

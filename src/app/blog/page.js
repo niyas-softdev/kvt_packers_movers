@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import ClientLogos from '../components/ClientLogos';
 import { CalendarIcon, ArrowRightIcon, ClockIcon, UserIcon } from '@heroicons/react/24/outline';
 
 export default function BlogPage() {
@@ -312,6 +313,9 @@ export default function BlogPage() {
           )}
         </div>
       </section>
+
+      {/* Client Logos */}
+      <ClientLogos title="Brands that trust our logistics" />
 
       {/* Call to Action */}
       <section className="bg-gradient-to-r from-yellow-400 to-yellow-500 py-16 relative overflow-hidden">
