@@ -8,9 +8,10 @@ const nextConfig = {
     domains: [],
     formats: ['image/webp', 'image/avif'],
   },
-  experimental: {
-    optimizeCss: true,
-  },
+  // Remove experimental CSS optimization that causes critters error
+  // experimental: {
+  //   optimizeCss: true,
+  // },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|svg)$/i,
