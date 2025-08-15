@@ -22,11 +22,15 @@ import {
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
-
+  const [imageError, setImageError] = useState({});
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const handleImageError = (imagePath) => {
+    setImageError(prev => ({ ...prev, [imagePath]: true }));
+  };
 
 
    const { ref, inView } = useInView({ triggerOnce: true });
@@ -196,13 +200,24 @@ export default function Home() {
 
           {/* RIGHT SIDE: Hero Image */}
           <div className="relative w-full lg:w-1/2 z-10">
-            <Image
-              src="/img/hero/hero1.png"
-              alt="Mover Holding Box"
-              width={600}
-              height={400}
-              className="w-full h-auto object-contain"
-            />
+            {!imageError["/img/hero/hero1.png"] ? (
+              <Image
+                src="/img/hero/hero1.png"
+                alt="Mover Holding Box"
+                width={600}
+                height={400}
+                className="w-full h-auto object-contain"
+                onError={() => handleImageError("/img/hero/hero1.png")}
+                priority
+              />
+            ) : (
+              <div className="w-full h-96 bg-gradient-to-br from-blue-100 to-green-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                <div className="text-center">
+                  <TruckIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                  <p className="text-gray-600 font-medium">Professional Moving Services</p>
+                </div>
+              </div>
+            )}
 
             {/* Floating Badges */}
             <div className="absolute top-10 right-10 bg-white rounded-full shadow-lg px-4 py-2 text-sm font-semibold text-gray-700">
@@ -226,13 +241,23 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Truck Image */}
           <div className="flex justify-center items-center">
-            <Image
-              src="/img/truck.png"
-              alt="KVT Truck"
-              width={600}
-              height={400}
-              className="object-contain drop-shadow-xl"
-            />
+            {!imageError["/img/truck.png"] ? (
+              <Image
+                src="/img/truck.png"
+                alt="KVT Truck"
+                width={600}
+                height={400}
+                className="object-contain drop-shadow-xl"
+                onError={() => handleImageError("/img/truck.png")}
+              />
+            ) : (
+              <div className="w-96 h-64 bg-gradient-to-br from-blue-100 to-green-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                <div className="text-center">
+                  <TruckIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                  <p className="text-gray-600 font-medium">KVT Transport Fleet</p>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Text Content */}
@@ -293,7 +318,23 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <div className="group bg-gray-50 rounded-xl shadow-md p-6 transition transform hover:-translate-y-2 hover:shadow-xl duration-300 ease-in-out animate-fadeIn">
-              <img src="/img/special/services1.jpg" alt="Storage Service" className="rounded-lg w-full h-48 object-cover mb-4" />
+              {!imageError["/img/special/services1.jpg"] ? (
+                <Image
+                  src="/img/special/services1.jpg"
+                  alt="Storage Service"
+                  width={400}
+                  height={300}
+                  className="rounded-lg w-full h-48 object-cover mb-4"
+                  onError={() => handleImageError("/img/special/services1.jpg")}
+                />
+              ) : (
+                <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-green-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300 mb-4">
+                  <div className="text-center">
+                    <CubeIcon className="w-12 h-12 text-gray-400 mx-auto mb-2" />
+                    <p className="text-gray-600 text-sm font-medium">Home Relocation</p>
+                  </div>
+                </div>
+              )}
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 Hassle-free Home relocation Services
               </h3>
@@ -307,7 +348,23 @@ export default function Home() {
 
             {/* Card 2 */}
             <div className="group bg-gray-50 rounded-xl shadow-md p-6 transition transform hover:-translate-y-2 hover:shadow-xl duration-300 ease-in-out animate-fadeIn delay-100">
-              <img src="/img/gallery/30.jpg" alt="International Relocation" className="rounded-lg w-full h-48 object-cover mb-4" />
+              {!imageError["/img/gallery/30.jpg"] ? (
+                <Image
+                  src="/img/gallery/30.jpg"
+                  alt="International Relocation"
+                  width={400}
+                  height={300}
+                  className="rounded-lg w-full h-48 object-cover mb-4"
+                  onError={() => handleImageError("/img/gallery/30.jpg")}
+                />
+              ) : (
+                <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-green-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300 mb-4">
+                  <div className="text-center">
+                    <CubeIcon className="w-12 h-12 text-gray-400 mx-auto mb-2" />
+                    <p className="text-gray-600 text-sm font-medium">Office Relocation</p>
+                  </div>
+                </div>
+              )}
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 Efficient office relocation Services
               </h3>
@@ -321,7 +378,23 @@ export default function Home() {
 
             {/* Card 3 */}
             <div className="group bg-gray-50 rounded-xl shadow-md p-6 transition transform hover:-translate-y-2 hover:shadow-xl duration-300 ease-in-out animate-fadeIn delay-200">
-              <img src="/img/gallery/14.jpg" alt="Vehicle Shifting" className="rounded-lg w-full h-48 object-cover mb-4" />
+              {!imageError["/img/gallery/14.jpg"] ? (
+                <Image
+                  src="/img/gallery/14.jpg"
+                  alt="Vehicle Shifting"
+                  width={400}
+                  height={300}
+                  className="rounded-lg w-full h-48 object-cover mb-4"
+                  onError={() => handleImageError("/img/gallery/14.jpg")}
+                />
+              ) : (
+                <div className="w-full h-48 bg-gradient-to-br from-blue-100 to-green-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300 mb-4">
+                  <div className="text-center">
+                    <CubeIcon className="w-12 h-12 text-gray-400 mx-auto mb-2" />
+                    <p className="text-gray-600 text-sm font-medium">Secure Packing</p>
+                  </div>
+                </div>
+              )}
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 Secure Packing Solutions for your valuables
               </h3>
@@ -356,13 +429,23 @@ export default function Home() {
               </Link>
             </div>
             <div className="relative">
-              <Image
-                src="/img/hero/hero_contact.jpg"
-                alt="Moving Truck"
-                width={500}
-                height={300}
-                className="rounded-xl shadow-2xl"
-              />
+              {!imageError["/img/hero/hero_contact.jpg"] ? (
+                <Image
+                  src="/img/hero/hero_contact.jpg"
+                  alt="Moving Truck"
+                  width={500}
+                  height={300}
+                  className="rounded-xl shadow-2xl"
+                  onError={() => handleImageError("/img/hero/hero_contact.jpg")}
+                />
+              ) : (
+                <div className="w-full h-64 bg-gradient-to-br from-blue-100 to-green-100 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                  <div className="text-center">
+                    <PhoneIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                    <p className="text-gray-600 font-medium">24/7 Customer Support</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -403,13 +486,23 @@ export default function Home() {
               </div>
             </div>
             <div className="relative">
-              <Image
-                src="/img/process.jpg"
-                alt="Working Process"
-                width={500}
-                height={300}
-                className=""
-              />
+              {!imageError["/img/process.jpg"] ? (
+                <Image
+                  src="/img/process.jpg"
+                  alt="Working Process"
+                  width={500}
+                  height={300}
+                  className=""
+                  onError={() => handleImageError("/img/process.jpg")}
+                />
+              ) : (
+                <div className="w-full h-64 bg-gradient-to-br from-blue-100 to-green-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                  <div className="text-center">
+                    <CubeIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                    <p className="text-gray-600 font-medium">Our Working Process</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -755,12 +848,22 @@ export default function Home() {
             {blogPosts.map((post, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <div className="relative h-48">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover"
-                  />
+                  {!imageError[post.image] ? (
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover"
+                      onError={() => handleImageError(post.image)}
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-blue-100 to-green-100 flex items-center justify-center border-2 border-dashed border-gray-300">
+                      <div className="text-center">
+                        <CubeIcon className="w-12 h-12 text-gray-400 mx-auto mb-2" />
+                        <p className="text-gray-600 text-sm font-medium">Blog Post</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <div className="p-6">
                   <div className="text-sm text-gray-500 mb-2">{post.date}</div>

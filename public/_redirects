@@ -1,0 +1,9 @@
+# Netlify redirects for Next.js static export
+# Handle client-side routing
+/*    /index.html   200
+
+# Redirect www to non-www (optional)
+www.example.com/* https://example.com/:splat 301
+
+# Redirect HTTP to HTTPS (optional)
+http://example.com/* https://example.com/:splat 301
