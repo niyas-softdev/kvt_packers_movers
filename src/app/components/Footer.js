@@ -1,25 +1,28 @@
+'use client';
 import Image from "next/image";
 import Link from "next/link";
+import Logo from "./Logo";
 import {
   PhoneIcon,
   EnvelopeIcon,
   MapPinIcon,
 } from "@heroicons/react/24/outline";
-import logo1 from "../../../public/img/white-logo.png";
 
 export default function Footer() {
+
   return (
     <footer className="bg-[#111827] text-white">
       {/* Top section */}
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-gray-700">
         {/* Left */}
         <div>
-          <Image
-            src={logo1}
+          <Logo
+            src="/img/white-logo.png"
             alt="KVT Logo"
             width={100}
             height={100}
             className="mb-4"
+            variant="white"
           />
           <h2 className="text-lg font-semibold">
             KVT Packers and Movers Company in Chennai.

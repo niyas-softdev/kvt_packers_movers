@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '../../../public/logo.png';
+import Logo from './Logo';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -95,8 +95,16 @@ export default function Navbar() {
       <nav className="px-4 sm:px-6 lg:px-10 py-3">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
-          <Link href="/">
-            <Image src={logo} alt="KVT Logo" width={120} height={60} className="object-contain" />
+          <Link href="/" className="flex items-center">
+            <Logo 
+              src="/logo.png" 
+              alt="KVT Packers and Movers Logo" 
+              width={120} 
+              height={60} 
+              className="object-contain"
+              variant="default"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
