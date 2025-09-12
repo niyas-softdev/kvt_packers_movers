@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import ServiceHero from '../components/ServiceHero';
 import ClientLogos from '../components/ClientLogos';
+import PageSEO from '../components/PageSEO';
 import Link from 'next/link';
 import { 
   ArrowRightIcon, 
@@ -83,7 +84,31 @@ export default function ServicesPage() {
   const currentService = services.find(service => service.id === activeService);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <PageSEO 
+        title="Our Moving Services - Residential, Corporate, Industrial & International"
+        description="Comprehensive moving services by KVT Packers and Movers. Residential, corporate, industrial machinery, international, and local moving services in Chennai. Professional packing and unpacking."
+        keywords={[
+          'moving services chennai',
+          'residential movers chennai',
+          'corporate movers chennai',
+          'industrial movers chennai',
+          'international movers chennai',
+          'local movers chennai',
+          'packing services chennai',
+          'unpacking services chennai',
+          'house shifting chennai',
+          'office relocation chennai',
+          'heavy machinery movers',
+          'plant relocation services',
+          'KVT moving services',
+          'professional movers tamil nadu'
+        ]}
+        image="/img/packing_truck.jpg"
+        url="/services"
+        type="website"
+      />
+      <div className="min-h-screen bg-gray-50">
       <ServiceHero
         badgeText="Professional Moving Services"
         title={currentService ? currentService.name : 'Service Details'}
@@ -407,6 +432,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 } 

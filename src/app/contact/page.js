@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import PageSEO from '../components/PageSEO';
 import Link from 'next/link';
 import { 
   PhoneIcon, 
@@ -98,7 +99,27 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <PageSEO 
+        title="Contact KVT Packers and Movers - Get Free Quote"
+        description="Contact KVT Packers and Movers for professional moving services in Chennai. Call +91 75500 16167 or email kvtpackersandmovers@gmail.com. Get free quote for residential, corporate, and industrial moves."
+        keywords={[
+          'contact packers movers chennai',
+          'get quote moving services',
+          'KVT contact number',
+          'moving services quote chennai',
+          'packers movers phone number',
+          'moving services email chennai',
+          'free quote moving chennai',
+          'KVT packers movers contact',
+          'moving services consultation',
+          'packers movers address chennai'
+        ]}
+        image="/img/hero/hero_contact.jpg"
+        url="/contact"
+        type="website"
+      />
+      <div className="min-h-screen bg-gray-50">
       
 
       {/* Hero Section */}
@@ -389,6 +410,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 } 

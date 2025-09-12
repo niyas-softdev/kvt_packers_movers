@@ -1,0 +1,32 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*
+Disallow: /*#
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+# Host
+Host: https://www.kvtpackersandmovers.com
+
+# Sitemaps
+Sitemap: https://www.kvtpackersandmovers.com/sitemap.xml

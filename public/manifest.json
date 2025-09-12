@@ -1,0 +1,66 @@
+{
+  "name": "KVT Packers and Movers",
+  "short_name": "KVT Movers",
+  "description": "Professional packers and movers in Chennai with 25+ years experience. Residential, corporate, industrial, and international moving services.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#22c55e",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-IN",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/logo.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Get Quote",
+      "short_name": "Quote",
+      "description": "Get a free quote for moving services",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Our Services",
+      "short_name": "Services",
+      "description": "View our moving services",
+      "url": "/services",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

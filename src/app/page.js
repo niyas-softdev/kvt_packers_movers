@@ -4,6 +4,7 @@ import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import Image from "next/image";
 import ClientLogos from './components/ClientLogos';
+import PageSEO from './components/PageSEO';
 import Link from 'next/link';
 import { 
   PhoneIcon,
@@ -117,7 +118,32 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-white text-gray-800">
+    <>
+      <PageSEO 
+        title="Professional Moving Services in Chennai, Tamil Nadu"
+        description="KVT Packers and Movers - 25+ years of professional moving services in Chennai. Residential, corporate, industrial, and international relocation. Call +91 75500 16167 for free quote."
+        keywords={[
+          'packers and movers chennai',
+          'moving services tamil nadu',
+          'house shifting chennai',
+          'office relocation chennai',
+          'industrial movers chennai',
+          'international movers chennai',
+          'local movers chennai',
+          'KVT packers movers',
+          'professional moving services',
+          'packing unpacking services',
+          'residential movers chennai',
+          'corporate movers chennai',
+          'heavy machinery movers',
+          'chennai moving company',
+          'tamil nadu packers movers'
+        ]}
+        image="/img/hero/hero1.png"
+        url="/"
+        type="website"
+      />
+      <main className="min-h-screen bg-white text-gray-800">
       {/* Hero Section */}
       <section className="relative w-full bg-gradient-to-r from-[#e9f5ff] to-white overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 py-16 lg:py-28">
@@ -882,6 +908,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
