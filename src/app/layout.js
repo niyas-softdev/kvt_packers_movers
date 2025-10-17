@@ -35,6 +35,15 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', type: 'image/x-icon' },
+      { url: '/logo.png', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/logo.png' }
+    ]
+  },
   openGraph: {
     title: 'KVT Packers and Movers - Professional Moving Services in Chennai',
     description: 'Professional packers and movers in Chennai with 25+ years experience. Residential, corporate, industrial, and international moving services.',
@@ -70,7 +79,7 @@ export const metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: '1jHfnYR8s72xyt02idASyPG_G30UucfuORpPKIoDYdQ',
     yandex: 'your-yandex-verification-code',
     yahoo: 'your-yahoo-verification-code',
   },
@@ -81,9 +90,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/logo.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/logo.png" />
+        {/* Icons are managed via metadata.icons */}
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#22c55e" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

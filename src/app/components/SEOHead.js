@@ -217,7 +217,7 @@ export default function SEOHead() {
       />
       
       {/* Additional SEO Meta Tags */}
-      <meta name="google-site-verification" content="your-google-verification-code" />
+      <meta name="google-site-verification" content="1jHfnYR8s72xyt02idASyPG_G30UucfuORpPKIoDYdQ" />
       <meta name="msvalidate.01" content="your-bing-verification-code" />
       <meta name="yandex-verification" content="your-yandex-verification-code" />
       
