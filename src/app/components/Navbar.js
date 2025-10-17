@@ -21,6 +21,14 @@ export default function Navbar() {
 
     { name: 'Who We Are', href: '/about' },
     {
+      name: 'Locations',
+      subItems: [
+        { name: 'Chennai', href: '/locations/chennai' },
+        { name: 'Anna Nagar', href: '/locations/anna-nagar' },
+        { name: 'Arumbakkam', href: '/locations/arumbakkam' },
+      ],
+    },
+    {
       name: 'Services',
       subItems: [
         { name: 'Service Details', href: '/services' },

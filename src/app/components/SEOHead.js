@@ -218,6 +218,10 @@ export default function SEOHead() {
       
       {/* Additional SEO Meta Tags */}
       <meta name="google-site-verification" content="1jHfnYR8s72xyt02idASyPG_G30UucfuORpPKIoDYdQ" />
+      <meta
+        name="keywords"
+        content="packers and movers near me, best packers and movers, packers and movers Anna Nagar, local shifting services, house shifting Chennai, office relocation services, trusted moving company, affordable packers and movers, residential moving Chennai, corporate relocation Chennai, industrial movers Chennai, international movers Chennai, local movers Chennai, safe packing and moving, movers and packers Chennai, relocation services Chennai, home shifting services, office shifting experts, nearby movers, budget movers Chennai"
+      />
       <meta name="msvalidate.01" content="your-bing-verification-code" />
       <meta name="yandex-verification" content="your-yandex-verification-code" />
       

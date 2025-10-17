@@ -11,10 +11,20 @@ export const metadata = {
     template: '%s | KVT Packers and Movers'
   },
   description: 'Professional packers and movers in Chennai with 25+ years experience. Residential, corporate, industrial, and international moving services. Call +91 75500 16167 for free quote.',
+  // Strengthened for SEO while keeping it concise and relevant
+  description:
+    'Trusted and affordable packers and movers in Chennai. Expert house shifting, office relocation, and local moving services in Anna Nagar and nearby areas. Call +91 75500 16167 for a free quote.',
   keywords: [
     'packers and movers chennai',
-    'moving services tamil nadu',
+    'packers and movers near me',
+    'best packers and movers',
+    'packers and movers anna nagar',
+    'local shifting services',
     'house shifting chennai',
+    'office relocation services',
+    'trusted moving company',
+    'affordable packers and movers',
+    'moving services tamil nadu',
     'office relocation chennai',
     'industrial movers chennai',
     'international movers chennai',
