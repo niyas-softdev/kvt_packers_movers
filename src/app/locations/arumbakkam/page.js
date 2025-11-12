@@ -1,4 +1,4 @@
-import PageSEO from "@/app/components/PageSEO";
+import PageSEO from "@/app/components/PageSEOClient";
 
 export const dynamic = "force-static";
 

@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import ClientLogos from '../components/ClientLogos';
 import Link from 'next/link';
+import PageStructuredData from '../components/PageSEO';
 import { 
   ArrowLeftIcon,
   MagnifyingGlassIcon,
@@ -101,13 +102,90 @@ export default function GalleryPage() {
     setSelectedImage(null);
   };
 
+  // Generate ImageGallery JSON-LD schema
+  const imageGallerySchema = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "KVT Packers and Movers Gallery",
+    "description": "Photo gallery showcasing our professional moving and packing services in Chennai",
+    "url": "https://kvtpackersandmovers.com/gallery",
+    "image": galleryImages.map(img => ({
+      "@type": "ImageObject",
+      "url": `https://kvtpackersandmovers.com${img.src}`,
+      "caption": img.alt,
+      "name": img.title
+    })),
+    "about": {
+      "@type": "LocalBusiness",
+      "name": "KVT Packers and Movers",
+      "url": "https://kvtpackersandmovers.com"
+    }
+  };
+
+  const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "KVT Packers and Movers Gallery",
+    "description": "Browse our comprehensive collection of moving and packing service photos",
+    "url": "https://kvtpackersandmovers.com/gallery",
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": galleryImages.length,
+      "itemListElement": galleryImages.map((img, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "ImageObject",
+          "url": `https://kvtpackersandmovers.com${img.src}`,
+          "caption": img.alt,
+          "name": img.title
+        }
+      }))
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative bg-cover bg-center bg-no-repeat overflow-hidden min-h-[80vh] flex items-center" style={{ backgroundImage: 'url(/img/hero/front_view.jpg)' }}>
+    <>
+      <PageStructuredData
+        title="Photo Gallery - KVT Packers and Movers Chennai"
+        description="Browse our gallery of moving and packing services. See our professional team in action, modern fleet, and successful relocations across Chennai and Tamil Nadu."
+        url="/gallery"
+        image="/img/gallery/30.jpg"
+        type="website"
+      />
+      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(imageGallerySchema, null, 2)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(collectionPageSchema, null, 2)
+        }}
+      />
+
+      <div className="min-h-screen bg-gray-50">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden min-h-[80vh] flex items-center">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/img/hero/front_view.jpg"
+              alt="KVT Packers and Movers Gallery - Professional Moving Services"
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
+              quality={90}
+            />
+            {/* Overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/40 z-0"></div>
+          </div>
        
-        
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-16 w-full">
+          <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-16 w-full">
           <div className="max-w-7xl mx-auto">
             <div className={`flex flex-col lg:flex-row justify-end items-center lg:items-start text-right transform transition-all duration-1000 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
@@ -194,6 +272,7 @@ export default function GalleryPage() {
                     src={image.src}
                     alt={image.alt}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   
@@ -354,6 +433,7 @@ export default function GalleryPage() {
                 src={selectedImage.src}
                 alt={selectedImage.alt}
                 fill
+                sizes="(max-width: 768px) 100vw, 80vw"
                 className="object-cover"
               />
             </div>
@@ -380,6 +460,7 @@ export default function GalleryPage() {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 } 

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import CountUp from 'react-countup';
-import PageSEO from '../components/PageSEO';
+// Metadata is handled in layout.js
 
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import ClientLogos from '../components/ClientLogos';
@@ -117,23 +117,6 @@ export default function AboutPage() {
 
   return (
     <>
-      <PageSEO 
-        title="About KVT Packers and Movers - 25+ Years of Excellence"
-        description="Learn about KVT Packers and Movers - Chennai's trusted moving company with 25+ years experience. Professional residential, corporate, and industrial moving services across Tamil Nadu."
-        keywords={[
-          'about KVT packers movers',
-          'KVT company history',
-          'packers movers chennai about',
-          'moving company profile',
-          'KVT team members',
-          'logistics company chennai',
-          'professional movers about',
-          'KVT achievements'
-        ]}
-        image="/img/hero/2.png"
-        url="/about"
-        type="website"
-      />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-teal-50">
         {/* Hero Section - Creative Gradient Background */}
         <section className="relative overflow-hidden">
@@ -173,16 +156,17 @@ export default function AboutPage() {
                 {/* Headline */}
                 <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
                   <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
-                    WHO WE ARE
+                    About KVT Packers and Movers in Chennai
                   </span>
-                  <br />
-                  <span className="text-white">Excellence in Motion</span>
                 </h1>
 
                 {/* Subtext */}
                 <p className="text-xl text-white/90 mb-8 leading-relaxed">
                   With over <span className="font-bold text-yellow-300">25+ years</span> of experience and partnerships with top brands, we provide 
-                  <span className="font-semibold text-cyan-300"> affordable and reliable</span> packing and moving services for local and long-distance relocations in Chennai.
+                  <span className="font-semibold text-cyan-300"> affordable and reliable</span> packing and moving services for local and long-distance relocations in Chennai. 
+                  Explore our <Link href="/services" className="text-yellow-300 hover:text-yellow-200 underline font-semibold">comprehensive services</Link>, 
+                  visit our <Link href="/locations/chennai" className="text-yellow-300 hover:text-yellow-200 underline font-semibold">Chennai location</Link>, 
+                  or <Link href="/contact" className="text-yellow-300 hover:text-yellow-200 underline font-semibold">contact us</Link> for a free quote.
                 </p>
 
                 {/* Stats Row */}
@@ -297,7 +281,9 @@ export default function AboutPage() {
                   <p className="text-gray-700 leading-relaxed text-lg">
                     KVT Packers and Movers began as a small local moving company in Chennai with a simple mission: 
                     to make moving stress-free and reliable. Over 25+ years, we've grown into Tamil Nadu's most 
-                    trusted logistics partner, serving thousands of satisfied customers.
+                    trusted logistics partner, serving thousands of satisfied customers. Today, we offer comprehensive 
+                    <Link href="/services" className="text-purple-600 hover:text-purple-700 font-semibold underline mx-1">moving services</Link> 
+                    including residential, corporate, and industrial relocations across Chennai and beyond.
                   </p>
                 </div>
 
@@ -311,7 +297,10 @@ export default function AboutPage() {
                   <p className="text-gray-700 leading-relaxed text-lg">
                     We understand that moving is more than just transporting belongings – it's about 
                     moving lives, dreams, and memories. That's why we treat every move with the care 
-                    and attention it deserves.
+                    and attention it deserves. Whether you're moving within <Link href="/locations/chennai" className="text-cyan-600 hover:text-cyan-700 font-semibold underline">Chennai</Link>, 
+                    to <Link href="/locations/anna-nagar" className="text-cyan-600 hover:text-cyan-700 font-semibold underline">Anna Nagar</Link>, 
+                    or <Link href="/locations/arumbakkam" className="text-cyan-600 hover:text-cyan-700 font-semibold underline">Arumbakkam</Link>, 
+                    our team ensures a seamless experience. <Link href="/contact" className="text-cyan-600 hover:text-cyan-700 font-semibold underline">Get in touch</Link> to learn more.
                   </p>
                 </div>
               </div>
@@ -559,9 +548,12 @@ export default function AboutPage() {
                     <div className="space-y-4">
                       <h3 className="text-2xl font-bold text-white">{service.title}</h3>
                       <p className="text-white/80 leading-relaxed">{service.description}</p>
-                      <button className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black px-6 py-3 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105">
+                      <Link 
+                        href="/services"
+                        className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black px-6 py-3 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 block text-center"
+                      >
                         Learn More
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

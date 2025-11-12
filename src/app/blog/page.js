@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ClientLogos from '../components/ClientLogos';
+import PageStructuredData from '../components/PageSEO';
 import { CalendarIcon, ArrowRightIcon, ClockIcon, UserIcon } from '@heroicons/react/24/outline';
 
 export default function BlogPage() {
@@ -171,44 +172,117 @@ export default function BlogPage() {
     }
   }, [selectedCategory]);
 
+  // Helper function to convert date string to ISO format
+  const convertDateToISO = (dateString) => {
+    // Format: "Nov 04, 2024" -> "2024-11-04"
+    const months = {
+      'Jan': '01', 'Feb': '02', 'Mar': '03', 'Apr': '04',
+      'May': '05', 'Jun': '06', 'Jul': '07', 'Aug': '08',
+      'Sep': '09', 'Oct': '10', 'Nov': '11', 'Dec': '12'
+    };
+    const parts = dateString.split(' ');
+    if (parts.length === 3) {
+      const month = months[parts[0]];
+      const day = parts[1].replace(',', '').padStart(2, '0');
+      const year = parts[2];
+      return `${year}-${month}-${day}`;
+    }
+    return new Date().toISOString().split('T')[0];
+  };
+
+  // Generate Blog JSON-LD schema
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "KVT Packers and Movers Blog",
+    "description": "Expert moving tips, guides, and industry insights from Chennai's trusted packers and movers",
+    "url": "https://kvtpackersandmovers.com/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "KVT Packers and Movers",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://kvtpackersandmovers.com/logo.png"
+      }
+    },
+    "blogPost": blogPosts.map((post) => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "url": `https://kvtpackersandmovers.com/blog/${post.slug}`,
+      "datePublished": convertDateToISO(post.date),
+      "author": {
+        "@type": "Organization",
+        "name": post.author,
+        "url": "https://kvtpackersandmovers.com"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": `https://kvtpackersandmovers.com${post.image}`,
+        "caption": post.title
+      },
+      "articleSection": post.category,
+      "timeRequired": post.readTime
+    }))
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-{/* Hero Section */}
-<section className="relative bg-gradient-to-r from-gray-400 to-white overflow-hidden">
-  {/* Background Pattern */}
-  <div className="absolute inset-0 opacity-5">
-    <div className="absolute inset-0 bg-gradient-to-br from-gray-200/20 to-transparent"></div>
-  </div>
+    <>
+      <PageStructuredData
+        title="Moving Tips & Guides – Packers and Movers Blog Chennai"
+        description="Expert moving tips, guides, and industry insights from KVT Packers and Movers Chennai. Learn about packing, relocation, and choosing the right movers for your needs."
+        url="/blog"
+        image="/img/hero/hero_blog.jpg"
+        type="website"
+      />
 
-  <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-20">
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:justify-between gap-10">
-      {/* Text Section */}
-      <div className={`w-full md:w-1/2 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-          Our Blog
-        </h1>
-        <p className="text-xl text-gray-700 mb-8 max-w-xl">
-          Discover expert tips, industry insights, and moving guides from Chennai's trusted packers and movers.
-        </p>
-        <div className="flex items-center text-gray-600 text-sm">
-          <Link href="/" className="hover:text-gray-900 transition-colors">Home</Link>
-          <span className="mx-2">›</span>
-          <span className="text-gray-900">Blog</span>
-        </div>
-      </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(blogSchema, null, 2)
+        }}
+      />
 
-      {/* Hero Image */}
-      <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-        <img
-          src="/img/hero/hero_blog.jpg"
-          alt="Happy couple moving boxes"
-          className="max-w-full h-auto rounded-lg shadow-lg"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+      <div className="min-h-screen bg-gray-50">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-r from-gray-400 to-white overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-200/20 to-transparent"></div>
+          </div>
+
+          <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-20">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:justify-between gap-10">
+              {/* Text Section */}
+              <div className={`w-full md:w-1/2 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                  Packers and Movers Blog – Moving Tips & Guides
+                </h1>
+                <p className="text-xl text-gray-700 mb-8 max-w-xl">
+                  Discover expert tips, industry insights, and moving guides from Chennai's trusted packers and movers.
+                </p>
+                <div className="flex items-center text-gray-600 text-sm">
+                  <Link href="/" className="hover:text-gray-900 transition-colors">Home</Link>
+                  <span className="mx-2">›</span>
+                  <span className="text-gray-900">Blog</span>
+                </div>
+              </div>
+
+              {/* Hero Image */}
+              <div className="w-full md:w-1/2 flex justify-center md:justify-end relative">
+                <Image
+                  src="/img/hero/hero_blog.jpg"
+                  alt="Packers and Movers Blog - Moving Tips and Guides"
+                  width={600}
+                  height={400}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="max-w-full h-auto rounded-lg shadow-lg"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
 
 
@@ -258,6 +332,7 @@ export default function BlogPage() {
                     src={post.image}
                     alt={post.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover image-hover"
                   />
                   <div className="absolute top-4 left-4">
@@ -343,6 +418,7 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 } 

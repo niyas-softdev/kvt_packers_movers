@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import PageSEO from '../components/PageSEO';
+// Metadata is handled in layout.js
 import Link from 'next/link';
 import { 
   PhoneIcon, 
@@ -98,26 +98,64 @@ export default function ContactPage() {
     }
   ];
 
+  // LocalBusiness Contact Schema
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "KVT Packers and Movers",
+    "image": "https://kvtpackersandmovers.com/logo.png",
+    "@id": "https://kvtpackersandmovers.com",
+    "url": "https://kvtpackersandmovers.com",
+    "telephone": "+91-75500-16167",
+    "email": "kvtpackersandmovers@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2nd floor, 5/11, Anna Avenue, Opp CMBT, Near Tamil Nadu Election Commission",
+      "addressLocality": "Arumbakkam",
+      "addressRegion": "Chennai",
+      "addressCountry": "IN",
+      "postalCode": "600106"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 13.0827,
+      "longitude": 80.2177
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "priceRange": "$$",
+    "areaServed": {
+      "@type": "City",
+      "name": "Chennai",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Tamil Nadu"
+      }
+    },
+    "sameAs": [
+      "https://www.facebook.com/people/KVT-Packers-And-Movers/100089017598094/",
+      "https://www.instagram.com/kvtpackersandmovers/"
+    ]
+  };
+
   return (
     <>
-      <PageSEO 
-        title="Contact KVT Packers and Movers - Get Free Quote"
-        description="Contact KVT Packers and Movers for professional moving services in Chennai. Call +91 75500 16167 or email kvtpackersandmovers@gmail.com. Get free quote for residential, corporate, and industrial moves."
-        keywords={[
-          'contact packers movers chennai',
-          'get quote moving services',
-          'KVT contact number',
-          'moving services quote chennai',
-          'packers movers phone number',
-          'moving services email chennai',
-          'free quote moving chennai',
-          'KVT packers movers contact',
-          'moving services consultation',
-          'packers movers address chennai'
-        ]}
-        image="/img/hero/hero_contact.jpg"
-        url="/contact"
-        type="website"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema, null, 2)
+        }}
       />
       <div className="min-h-screen bg-gray-50">
       
@@ -134,7 +172,7 @@ export default function ContactPage() {
       {/* Text Section */}
       <div className={`w-full md:w-1/2 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-          Contact Us
+          Contact KVT Packers and Movers in Chennai
         </h1>
         <p className="text-xl text-gray-100 mb-8 max-w-xl">
           Get in touch with us today to discuss your moving needs and receive personalized assistance.
@@ -148,10 +186,14 @@ export default function ContactPage() {
 
       {/* Hero Image */}
       <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-        <img
+        <Image
           src="/img/hero/hero_contact.jpg"
-          alt="Happy couple moving boxes"
+          alt="Contact KVT Packers and Movers in Chennai"
+          width={600}
+          height={400}
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="max-w-full h-auto rounded-lg shadow-lg"
+          priority
         />
       </div>
     </div>
@@ -170,18 +212,21 @@ export default function ContactPage() {
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">Feel free to write</h2>
                 <p className="text-gray-600 mb-8">Send us a message and we'll get back to you as soon as possible.</p>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6" suppressHydrationWarning>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                          <div className="form-field-appear">
                        <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                        <input
                          type="text"
                          name="name"
+                         id="name"
                          value={formData.name}
                          onChange={handleInputChange}
                          placeholder="Enter Name"
                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent form-input-focus"
                          required
+                         aria-label="Your full name"
+                         suppressHydrationWarning
                        />
                      </div>
                                          <div className="form-field-appear">
@@ -189,11 +234,14 @@ export default function ContactPage() {
                        <input
                          type="tel"
                          name="contactNumber"
+                         id="contactNumber"
                          value={formData.contactNumber}
                          onChange={handleInputChange}
                          placeholder="Enter Contact Number"
                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent form-input-focus"
                          required
+                         aria-label="Your contact phone number"
+                         suppressHydrationWarning
                        />
                      </div>
                   </div>
@@ -203,11 +251,14 @@ export default function ContactPage() {
                      <input
                        type="email"
                        name="email"
+                       id="email"
                        value={formData.email}
                        onChange={handleInputChange}
                        placeholder="Enter Email"
                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent form-input-focus"
                        required
+                       aria-label="Your email address"
+                       suppressHydrationWarning
                      />
                    </div>
                   
@@ -217,11 +268,14 @@ export default function ContactPage() {
                        <input
                          type="text"
                          name="movingFrom"
+                         id="movingFrom"
                          value={formData.movingFrom}
                          onChange={handleInputChange}
                          placeholder="Enter Moving From"
                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent form-input-focus"
                          required
+                         aria-label="Location you are moving from"
+                         suppressHydrationWarning
                        />
                      </div>
                                          <div className="form-field-appear">
@@ -229,11 +283,14 @@ export default function ContactPage() {
                        <input
                          type="text"
                          name="movingTo"
+                         id="movingTo"
                          value={formData.movingTo}
                          onChange={handleInputChange}
                          placeholder="Enter Moving To"
                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent form-input-focus"
                          required
+                         aria-label="Location you are moving to"
+                         suppressHydrationWarning
                        />
                      </div>
                   </div>
@@ -243,10 +300,13 @@ export default function ContactPage() {
                      <input
                        type="date"
                        name="shiftingDate"
+                       id="shiftingDate"
                        value={formData.shiftingDate}
                        onChange={handleInputChange}
                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent form-input-focus"
                        required
+                       aria-label="Preferred moving date"
+                       suppressHydrationWarning
                      />
                    </div>
                   
@@ -254,12 +314,15 @@ export default function ContactPage() {
                      <label className="block text-sm font-medium text-gray-700 mb-2">Movement of Things</label>
                      <textarea
                        name="movementOfThings"
+                       id="movementOfThings"
                        value={formData.movementOfThings}
                        onChange={handleInputChange}
                        placeholder="Enter Movement of Things"
                        rows="4"
                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent form-input-focus resize-none"
                        required
+                       aria-label="Description of items to be moved"
+                       suppressHydrationWarning
                      ></textarea>
                    </div>
                   

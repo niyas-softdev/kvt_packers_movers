@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import Image from "next/image";
 import ClientLogos from './components/ClientLogos';
-import PageSEO from './components/PageSEO';
+import PageSEO from './components/PageSEOClient';
 import Link from 'next/link';
 import { 
   PhoneIcon,
@@ -150,11 +150,11 @@ export default function Home() {
           {/* LEFT SIDE: Text Content */}
           <div className="w-full lg:w-1/2 text-center lg:text-left z-10">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Packers and Movers <br /> Services in Tamil Nadu
+              Packers and Movers in Chennai – Trusted Shifting & Relocation Services
             </h1>
             <p className="text-lg text-gray-700 mb-8">
               Experience a stress-free move with our affordable packing and unpacking
-              services for both local and interstate relocations.
+              services for both local and interstate relocations. Professional <Link href="/services/local" className="text-green-600 hover:text-green-700 font-semibold underline">local moving services in Chennai</Link> and expert <Link href="/locations/chennai" className="text-green-600 hover:text-green-700 font-semibold underline">packers and movers in Chennai</Link> ready to serve you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
@@ -232,6 +232,7 @@ export default function Home() {
                 alt="Mover Holding Box"
                 width={600}
                 height={400}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-auto object-contain"
                 onError={() => handleImageError("/img/hero/hero1.png")}
                 priority
@@ -297,7 +298,10 @@ export default function Home() {
               partnerships with top brands, provides{" "}
               <strong className="text-blue-900">affordable and reliable packing</strong>{" "}
               and moving services for local and long-distance{" "}
-              <strong className="text-blue-900">relocations in Chennai</strong>.
+              <strong className="text-blue-900">relocations in Chennai</strong>. 
+              Whether you need <Link href="/services/local" className="text-green-600 hover:text-green-700 font-semibold underline">local moving services</Link> or 
+              professional <Link href="/locations/chennai" className="text-green-600 hover:text-green-700 font-semibold underline">packers and movers in Chennai</Link>, 
+              we're here to help. <Link href="/contact" className="text-green-600 hover:text-green-700 font-semibold underline">Contact us</Link> today for a free quote.
             </p>
 
             {/* Service Highlights */}
@@ -575,7 +579,10 @@ export default function Home() {
               What Our Clients Say
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real experiences from satisfied customers who trusted KVT Packers and Movers for their relocation needs
+              Real experiences from satisfied customers who trusted KVT Packers and Movers for their relocation needs. 
+              Looking for <Link href="/services/local" className="text-green-600 hover:text-green-700 font-semibold underline">local moving services</Link> or 
+              <Link href="/locations/chennai" className="text-green-600 hover:text-green-700 font-semibold underline"> packers and movers in Chennai</Link>? 
+              <Link href="/contact" className="text-green-600 hover:text-green-700 font-semibold underline">Get in touch</Link> today!
             </p>
           </div>
 
@@ -799,50 +806,66 @@ export default function Home() {
               <h2 className="text-2xl font-bold text-gray-800 mb-6">
                 Request a Quote
               </h2>
-              <form className="space-y-4">
+              <form className="space-y-4" suppressHydrationWarning>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
                     type="text"
+                    name="name"
                     placeholder="Name"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    suppressHydrationWarning
                   />
                   <input
                     type="email"
+                    name="email"
                     placeholder="Email"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    suppressHydrationWarning
                   />
                 </div>
                 <input
                   type="tel"
+                  name="phone"
                   placeholder="Contact Number"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  suppressHydrationWarning
                 />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
                     type="text"
+                    name="movingFrom"
                     placeholder="Moving From"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    suppressHydrationWarning
                   />
                   <input
                     type="text"
+                    name="movingTo"
                     placeholder="Moving To"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    suppressHydrationWarning
                   />
                 </div>
                 <input
                   type="date"
+                  name="shiftingDate"
                   placeholder="Shifting Date"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  suppressHydrationWarning
                 />
                 <input
                   type="text"
+                  name="movementOfThings"
                   placeholder="Movement of Things"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  suppressHydrationWarning
                 />
                 <textarea
+                  name="message"
                   placeholder="Message"
                   rows="4"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  suppressHydrationWarning
                 ></textarea>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button

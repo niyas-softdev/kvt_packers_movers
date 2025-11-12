@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import ClientLogos from '../components/ClientLogos';
+import PageStructuredData from '../components/PageSEO';
 import { ArrowLeftIcon, StarIcon, PlayIcon } from '@heroicons/react/24/outline';
 
 export default function TestimonialsPage() {
@@ -294,8 +295,82 @@ export default function TestimonialsPage() {
     setSelectedVideo(null);
   };
 
+  // Helper function to convert relative time to ISO date
+  const getDateFromTimeAgo = (timeAgo) => {
+    const now = new Date();
+    const lowerTimeAgo = timeAgo.toLowerCase();
+    
+    // Extract number from string (e.g., "10 months ago" -> 10)
+    const match = lowerTimeAgo.match(/(\d+)/);
+    const number = match ? parseInt(match[1]) : 1;
+    
+    if (lowerTimeAgo.includes('month')) {
+      now.setMonth(now.getMonth() - number);
+    } else if (lowerTimeAgo.includes('year')) {
+      now.setFullYear(now.getFullYear() - number);
+    } else if (lowerTimeAgo.includes('day')) {
+      now.setDate(now.getDate() - number);
+    } else {
+      // Default to 1 month ago if format is unclear
+      now.setMonth(now.getMonth() - 1);
+    }
+    return now.toISOString().split('T')[0];
+  };
+
+  // Calculate aggregate rating
+  const totalReviews = testimonials.length;
+  const averageRating = testimonials.reduce((sum, t) => sum + t.rating, 0) / totalReviews;
+  const bestRating = 5;
+  const worstRating = 1;
+
+  // Generate Review schema for each testimonial
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "KVT Packers and Movers",
+    "url": "https://kvtpackersandmovers.com",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": averageRating.toFixed(1),
+      "reviewCount": totalReviews,
+      "bestRating": bestRating,
+      "worstRating": worstRating
+    },
+    "review": testimonials.map((testimonial) => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": testimonial.name
+      },
+      "datePublished": getDateFromTimeAgo(testimonial.timeAgo),
+      "reviewBody": testimonial.content,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": testimonial.rating,
+        "bestRating": bestRating,
+        "worstRating": worstRating
+      }
+    }))
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <PageStructuredData
+        title="Customer Reviews – KVT Packers and Movers Chennai"
+        description="Read authentic customer reviews and testimonials for KVT Packers and Movers. 4.8/5 average rating from satisfied customers in Chennai. See why thousands trust us for their relocation needs."
+        url="/testimonials"
+        image="/img/review/01.png"
+        type="website"
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(reviewSchema, null, 2)
+        }}
+      />
+
+      <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-900 to-blue-800 py-20">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -463,6 +538,7 @@ export default function TestimonialsPage() {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 } 

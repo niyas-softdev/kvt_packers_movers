@@ -10,7 +10,6 @@ export const metadata = {
     default: 'KVT Packers and Movers - Professional Moving Services in Chennai, Tamil Nadu',
     template: '%s | KVT Packers and Movers'
   },
-  description: 'Professional packers and movers in Chennai with 25+ years experience. Residential, corporate, industrial, and international moving services. Call +91 75500 16167 for free quote.',
   // Strengthened for SEO while keeping it concise and relevant
   description:
     'Trusted and affordable packers and movers in Chennai. Expert house shifting, office relocation, and local moving services in Anna Nagar and nearby areas. Call +91 75500 16167 for a free quote.',
@@ -90,8 +89,6 @@ export const metadata = {
   },
   verification: {
     google: '1jHfnYR8s72xyt02idASyPG_G30UucfuORpPKIoDYdQ',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
   },
   category: 'Moving and Logistics Services',
 };
@@ -110,7 +107,7 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-title" content="KVT Packers and Movers" />
         <SEOHead />
       </head>
-      <body className="bg-white text-gray-800 font-sans antialiased">
+      <body className="bg-white text-gray-800 font-sans antialiased" suppressHydrationWarning>
         {/* Navbar with top contact bar */}
         <Navbar />
 

@@ -5,7 +5,7 @@ import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import ServiceHero from '../components/ServiceHero';
 import ClientLogos from '../components/ClientLogos';
-import PageSEO from '../components/PageSEO';
+import PageSEO from '../components/PageSEOClient';
 import Link from 'next/link';
 import { 
   ArrowRightIcon, 
@@ -419,7 +419,7 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-blue-900 text-white px-8 py-3 rounded-semibold hover:bg-blue-800 transition-colors transform hover:scale-105"
+              className="bg-blue-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors transform hover:scale-105"
             >
               Get Free Quote
             </Link>
