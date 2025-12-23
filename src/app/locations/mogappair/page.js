@@ -1,33 +1,34 @@
 import PageSEO from "@/app/components/PageSEOClient";
+import Link from "next/link";
 
 export const dynamic = "force-static";
 
-export default function AnnaNagarLocationPage() {
-  const title = "Packers and Movers in Anna Nagar | Local Shifting & Relocation";
-  const description = "Top-rated packers and movers in Anna Nagar for house shifting, office relocation, and local moving. Safe packing, careful handling, and on-time delivery at affordable prices.";
+export default function MogappairLocationPage() {
+  const title = "Packers and Movers in Mogappair | Local Shifting & Relocation Services";
+  const description = "Trusted packers and movers in Mogappair for house shifting, office relocation, and local moving. Professional packing, safe handling, and timely delivery at affordable prices. Serving Mogappair East, Mogappair West, Padi Road, and nearby areas.";
   const keywords = [
-    "packers and movers anna nagar",
-    "packers and movers near me",
-    "best packers and movers anna nagar",
-    "local shifting services anna nagar",
-    "house shifting anna nagar",
-    "office relocation services anna nagar",
-    "trusted moving company anna nagar",
-    "affordable packers and movers anna nagar"
+    "packers and movers mogappair",
+    "packers and movers near me mogappair",
+    "local packers and movers mogappair",
+    "house shifting mogappair",
+    "office relocation mogappair",
+    "trusted moving company mogappair",
+    "best packers and movers mogappair",
+    "affordable packers and movers mogappair"
   ];
 
   const faqs = [
     {
-      q: "Do you provide same-day shifting in Anna Nagar?",
-      a: "Yes, for short-distance local moves, we can often arrange same-day service based on availability."
+      q: "Do you provide same-day shifting services in Mogappair?",
+      a: "Yes, for short-distance local moves within Mogappair and nearby areas, we can often arrange same-day service based on availability. We recommend booking 1-2 days in advance for better scheduling."
     },
     {
-      q: "Will you dismantle and reassemble furniture?",
-      a: "Yes, our team can dismantle beds, wardrobes, and modular furniture and reassemble them at the destination."
+      q: "What areas near Mogappair do you serve?",
+      a: "We serve Mogappair East, Mogappair West, Padi Road, Ayanavaram, and surrounding localities. Our team is familiar with the local routes and can provide efficient moving services across these areas."
     },
     {
-      q: "Are there additional charges for weekends?",
-      a: "Pricing is transparent. Weekend surcharges may apply during peak demand; we confirm all costs upfront."
+      q: "Do you handle office relocation in Mogappair?",
+      a: "Yes, we provide complete office relocation services in Mogappair including IT equipment handling, furniture disassembly, and minimal downtime moves. We work around your business schedule to minimize disruption."
     }
   ];
 
@@ -47,7 +48,7 @@ export default function AnnaNagarLocationPage() {
     serviceType: "Packers and Movers",
     areaServed: {
       "@type": "Place",
-      name: "Anna Nagar, Chennai"
+      name: "Mogappair, Chennai"
     },
     provider: {
       "@type": "LocalBusiness",
@@ -62,7 +63,7 @@ export default function AnnaNagarLocationPage() {
         title={title}
         description={description}
         keywords={keywords}
-        url="/locations/anna-nagar"
+        url="/locations/mogappair"
         image="/logo.png"
         type="webpage"
       />
@@ -74,9 +75,9 @@ export default function AnnaNagarLocationPage() {
       <section className="relative bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white py-20">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Packers and Movers in Anna Nagar</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Packers and Movers in Mogappair</h1>
           <p className="text-xl md:text-2xl mb-8 text-green-100">
-            Your trusted local moving partner in Anna Nagar for residents searching for packers and movers near me in Anna Nagar and reliable local packers and movers near you for house and office shifting.
+            Your trusted local moving partner in Mogappair. If you're searching for packers and movers near me in Mogappair or reliable local packers and movers near you in Mogappair for house and office shifting, we provide professional services across Mogappair East, Mogappair West, Padi Road, and Ayanavaram.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">🏠 Local Shifting</span>
@@ -96,14 +97,14 @@ export default function AnnaNagarLocationPage() {
       {/* Why Choose Us Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Why Choose Us in Anna Nagar?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Why Choose Us in Mogappair?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">⚡</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">Same Day Service</h3>
-              <p className="text-gray-600 text-sm">Quick local moves with same-day availability</p>
+              <p className="text-gray-600 text-sm">Quick local moves with same-day availability in Mogappair</p>
             </div>
             <div className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -117,14 +118,14 @@ export default function AnnaNagarLocationPage() {
                 <span className="text-2xl">📅</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">Weekend Service</h3>
-              <p className="text-gray-600 text-sm">Flexible scheduling including weekends</p>
+              <p className="text-gray-600 text-sm">Flexible scheduling including weekends for your convenience</p>
             </div>
             <div className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🏘️</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">Local Expertise</h3>
-              <p className="text-gray-600 text-sm">Deep knowledge of Anna Nagar's layout and access points</p>
+              <p className="text-gray-600 text-sm">Deep knowledge of Mogappair's layout and access points</p>
             </div>
           </div>
         </div>
@@ -133,7 +134,7 @@ export default function AnnaNagarLocationPage() {
       {/* Services Section */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Our Services in Anna Nagar</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Our Services in Mogappair</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200">
               <div className="text-3xl mb-4">🏠</div>
@@ -162,21 +163,15 @@ export default function AnnaNagarLocationPage() {
       {/* Landmark-Based Local SEO Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">Packers and Movers Near Anna Nagar Landmarks</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-800">Packers and Movers Near Mogappair Landmarks</h2>
           <p className="text-gray-700 mb-4">
-            Many of our moves in Anna Nagar start or end near well-known local landmarks, which helps us plan the
-            quickest and safest routes for your belongings. Whether you live close to Anna Nagar Tower Park, commute
-            via Thirumangalam Metro Station, or shop regularly at VR Mall, our team is familiar with the apartment
-            complexes and streets around these busy points.
+            Our team is well-acquainted with Mogappair's key areas and landmarks, which helps us plan efficient routes and coordinate moves smoothly. Whether you're located in Mogappair East near the main commercial areas, Mogappair West with its residential complexes, along Padi Road with its busy traffic, or in the Ayanavaram vicinity, we understand the local geography and access points.
           </p>
           <p className="text-gray-700 mb-4">
-            We also frequently handle moves around Anna Nagar Roundtana and the Blue Star Bus Stop, where access and
-            parking can be challenging during peak hours. By scheduling loading and unloading at the right time, we
-            reduce traffic-related delays and ensure your house shifting or office relocation stays on schedule.
+            This familiarity with Mogappair's layout means we can navigate narrow lanes, coordinate parking, and handle loading/unloading efficiently even during peak hours. Our experience with moves around these landmarks ensures timely service and reduces delays caused by traffic or access challenges.
           </p>
           <p className="text-gray-700">
-            This local knowledge around key Anna Nagar landmarks means you get a smoother, better-coordinated moving
-            experience with clear communication from our team from start to finish.
+            Whether you're moving within Mogappair East, Mogappair West, or between these areas and nearby localities like Padi Road or Ayanavaram, our local knowledge translates to a smoother, more reliable moving experience for your house shifting or office relocation needs.
           </p>
         </div>
       </section>
@@ -184,30 +179,26 @@ export default function AnnaNagarLocationPage() {
       {/* Areas We Serve Section */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">Areas We Serve in and Around Anna Nagar</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-800">Areas We Serve in and Around Mogappair</h2>
           <p className="text-gray-700 mb-4">
-            Our Anna Nagar team covers a wide local radius so that families and offices in neighbouring streets and
-            sub-localities can also benefit from same-day or next-day shifting support. We handle local moves for
-            apartments, independent houses, and commercial spaces across the core and surrounding parts of Anna Nagar.
+            Our Mogappair team covers a wide local radius so that families and offices in neighbouring streets and sub-localities can also benefit from same-day or next-day shifting support. We handle local moves for apartments, independent houses, and commercial spaces across Mogappair and its surrounding areas.
           </p>
           <p className="text-gray-700 mb-4">
-            Below are some of the main stretches where we regularly provide packing, loading, transport, and unloading
-            services:
+            Below are the main areas where we regularly provide packing, loading, transport, and unloading services:
           </p>
           <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-4">
-            <li>Anna Nagar East</li>
-            <li>Anna Nagar West</li>
-            <li>Anna Nagar 2nd Avenue</li>
-            <li>Anna Nagar 3rd Avenue</li>
-            <li>Shenoy Nagar</li>
-            <li>Aminjikarai</li>
-            <li>Kilpauk</li>
             <li>Mogappair East</li>
             <li>Mogappair West</li>
+            <li>Padi Road</li>
+            <li>Ayanavaram</li>
+            <li>Anna Nagar (nearby areas)</li>
+            <li>Kilpauk</li>
+            <li>Villivakkam</li>
+            <li>Kolathur</li>
+            <li>Perambur</li>
           </ul>
           <p className="text-gray-700">
-            If you are planning a move within these areas or between Anna Nagar and other parts of Chennai, our nearby
-            crew can usually schedule a quick site assessment and offer same-day moving slots, subject to availability.
+            If you are planning a move within these areas or between Mogappair and other parts of Chennai, our nearby crew can usually schedule a quick site assessment and offer same-day or next-day moving slots, subject to availability.
           </p>
         </div>
       </section>
@@ -230,29 +221,23 @@ export default function AnnaNagarLocationPage() {
       {/* Pricing / Cost Intent Section */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">Packers and Movers Charges in Anna Nagar</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-800">Packers and Movers Charges in Mogappair</h2>
           <p className="text-gray-700 mb-4">
-            Moving costs in Anna Nagar depend on factors like distance within Chennai, floor level, lift access, and
-            the total volume of items. We follow a transparent pricing model and share all charges clearly before you
-            confirm the booking.
+            Moving costs in Mogappair depend on factors like distance within Chennai, floor level, lift access, and the total volume of items. We follow a transparent pricing model and share all charges clearly before you confirm the booking.
           </p>
           <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
             <li>
-              <strong>1BHK local shifting:</strong> typically starts from ₹3,500–₹6,500 for moves within Anna Nagar and
-              nearby areas.
+              <strong>1BHK local shifting:</strong> typically starts from ₹3,500–₹6,500 for moves within Mogappair and nearby areas like Padi Road and Ayanavaram.
             </li>
             <li>
-              <strong>2BHK local shifting:</strong> usually ranges from ₹6,500–₹12,000 depending on inventory size and
-              access conditions.
+              <strong>2BHK local shifting:</strong> usually ranges from ₹6,500–₹12,000 depending on inventory size and access conditions in Mogappair East or Mogappair West.
             </li>
             <li>
-              <strong>Office relocation:</strong> priced based on the number of workstations, equipment, and distance
-              between old and new premises.
+              <strong>Office relocation:</strong> priced based on the number of workstations, equipment, and distance between old and new premises. We provide detailed quotes after a site survey.
             </li>
           </ul>
           <p className="text-gray-700">
-            For an accurate quote tailored to your house or office, our team can quickly gather details over a call or
-            arrange a short site visit in and around Anna Nagar.
+            For an accurate quote tailored to your house or office in Mogappair, our team can quickly gather details over a call or arrange a short site visit in and around Mogappair East, Mogappair West, Padi Road, or Ayanavaram.
           </p>
         </div>
       </section>
@@ -260,21 +245,16 @@ export default function AnnaNagarLocationPage() {
       {/* Local Testimonials Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">What Our Anna Nagar Customers Say</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-800">What Our Mogappair Customers Say</h2>
           <div className="space-y-4 text-gray-700">
             <p className="leading-relaxed">
-              &quot;I was looking for the best packers and movers near me in Anna Nagar and KVT handled my 2BHK shift
-              very smoothly. The team arrived on time, packed everything neatly, and completed the move without any
-              damage.&quot;
+              &quot;I was looking for the best packers and movers near me in Mogappair and KVT handled my 2BHK shift very smoothly. The team arrived on time, packed everything neatly, and completed the move from Mogappair East to Mogappair West without any damage. Highly recommended!&quot;
             </p>
             <p className="leading-relaxed">
-              &quot;We used KVT for a small office move within Anna Nagar and were impressed by their reliable local
-              shifting service in Anna Nagar. The staff were polite, efficient, and finished the relocation faster than
-              we expected.&quot;
+              &quot;We used KVT for a small office move within Mogappair and were impressed by their reliable local shifting service in Mogappair. The staff were polite, efficient, and finished the relocation faster than we expected. Great service for businesses in the area.&quot;
             </p>
             <p className="leading-relaxed">
-              &quot;Highly recommended for anyone planning a local move in and around Anna Nagar. Clear pricing,
-              careful packing, and a professional crew that understands the locality very well.&quot;
+              &quot;Highly recommended for anyone planning a local move in and around Mogappair. Clear pricing, careful packing, and a professional crew that understands the locality very well. They made our move from Padi Road to Mogappair West stress-free.&quot;
             </p>
           </div>
         </div>
@@ -285,29 +265,23 @@ export default function AnnaNagarLocationPage() {
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-6 text-gray-800">Related Locations We Serve</h2>
           <p className="text-gray-700 mb-4">
-            If you are comparing options in nearby neighbourhoods, you can explore our other dedicated location pages
-            for more details on services and coverage:
+            If you are comparing options in nearby neighbourhoods, you can explore our other dedicated location pages for more details on services and coverage:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-gray-700">
             <li>
-              <a href="/locations/arumbakkam" className="text-green-700 font-semibold hover:underline">
+              <Link href="/locations/anna-nagar" className="text-green-700 font-semibold hover:underline">
+                Packers and Movers in Anna Nagar
+              </Link>
+            </li>
+            <li>
+              <Link href="/locations/arumbakkam" className="text-green-700 font-semibold hover:underline">
                 Packers and Movers in Arumbakkam
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/packers-and-movers-in-koyambedu" className="text-green-700 font-semibold hover:underline">
-                Packers and Movers in Koyambedu
-              </a>
-            </li>
-            <li>
-              <a href="/locations/mogappair" className="text-green-700 font-semibold hover:underline">
-                Packers and Movers in Mogappair
-              </a>
-            </li>
-            <li>
-              <a href="/locations/kilpauk" className="text-green-700 font-semibold hover:underline">
+              <Link href="/locations/kilpauk" className="text-green-700 font-semibold hover:underline">
                 Packers and Movers in Kilpauk
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -316,7 +290,7 @@ export default function AnnaNagarLocationPage() {
       {/* CTA Section */}
       <section className="py-16 bg-green-600 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Move in Anna Nagar?</h2>
+          <h2 className="text-3xl font-bold mb-4">Ready to Move in Mogappair?</h2>
           <p className="text-xl mb-8 text-green-100">Get a free quote for your local relocation needs</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
@@ -337,5 +311,4 @@ export default function AnnaNagarLocationPage() {
     </>
   );
 }
-
 

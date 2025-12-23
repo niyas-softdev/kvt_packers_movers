@@ -18,134 +18,158 @@ export default function BlogPage() {
     {
       id: 1,
       title: "Trusted Heavy Item Relocation Experts in Anna Nagar, Chennai",
-      excerpt: "Professional heavy item relocation services in Anna Nagar, Chennai. We specialize in moving steel lockers, machinery, and heavy equipment with care and precision.",
+      excerpt: "Looking for reliable packers and movers near you in Anna Nagar for heavy item relocation? KVT Packers & Movers specializes in moving steel lockers, industrial machinery, heavy equipment, and oversized furniture with professional care and precision. Our experienced team in Anna Nagar uses specialized equipment and techniques to ensure safe transportation of your valuable heavy items. Whether you need to relocate machinery from your factory, move heavy safes, or transport large furniture pieces, we provide door-to-door service with proper packing, loading, and unloading. Trusted by businesses and residents across Anna Nagar East, Anna Nagar West, and nearby areas for safe heavy item relocation services.",
       image: "/img/location/anna_nagar1.jpg",
+      imageAlt: "Heavy item relocation services in Anna Nagar Chennai - KVT Packers and Movers",
       date: "Nov 04, 2024",
       author: "KVT Team",
       readTime: "5 min read",
       category: "Heavy Relocation",
-      slug: "heavy-item-relocation-anna-nagar-chennai"
+      slug: "heavy-item-relocation-anna-nagar-chennai",
+      keywords: ["heavy item relocation", "Anna Nagar", "Chennai", "packers and movers near me", "machinery movers"]
     },
     {
       id: 2,
-      title: "House shifting services in Arumbakkam",
-      excerpt: "Complete house shifting services in Arumbakkam with professional packing, loading, and unloading. Trusted by thousands of families.",
+      title: "House Shifting Services in Arumbakkam | Local Packers and Movers Near You",
+      excerpt: "Complete house shifting services in Arumbakkam with professional packing, loading, and unloading. If you're searching for packers and movers near me in Arumbakkam, KVT Packers & Movers offers reliable local moving services trusted by thousands of families. Our team handles everything from 1BHK to 4BHK apartment shifts, independent house moves, and office relocations in Arumbakkam and nearby areas like CMBT, Anna Nagar, and Aminjikarai. We provide same-day shifting services, furniture disassembly and reassembly, safe packing with quality materials, and transparent pricing with no hidden charges. Experience stress-free house shifting with our door-to-door service and dedicated move coordinator.",
       image: "/img/location/arumbakkam.jpg",
+      imageAlt: "House shifting services in Arumbakkam Chennai - Local packers and movers near you",
       date: "Nov 01, 2024",
       author: "KVT Team",
       readTime: "4 min read",
       category: "Local Moving",
-      slug: "house-shifting-services-arumbakkam"
+      slug: "house-shifting-services-arumbakkam",
+      keywords: ["house shifting", "Arumbakkam", "packers and movers near me", "local movers", "Chennai"]
     },
     {
       id: 3,
-      title: "House shifting from Chennai to Nagercoil",
-      excerpt: "Reliable house shifting services from Chennai to Nagercoil. Door-to-door service with complete packing and unpacking assistance.",
+      title: "House Shifting from Chennai to Nagercoil | Intercity Moving Services",
+      excerpt: "Reliable house shifting services from Chennai to Nagercoil with complete door-to-door service, professional packing, and unpacking assistance. Planning an intercity move from Chennai to Nagercoil? KVT Packers & Movers offers comprehensive relocation solutions including safe packing of all household items, secure transportation in specialized vehicles, insurance coverage, and unpacking services at your new home. Our experienced team ensures timely delivery and careful handling of your belongings throughout the journey. We handle everything from furniture disassembly to final setup, making your Chennai to Nagercoil move hassle-free and stress-free.",
       image: "/img/location/nagercoil.jpg",
+      imageAlt: "House shifting from Chennai to Nagercoil - Intercity moving services",
       date: "Nov 01, 2024",
       author: "KVT Team",
       readTime: "6 min read",
       category: "Intercity Moving",
-      slug: "house-shifting-chennai-to-nagercoil"
+      slug: "house-shifting-chennai-to-nagercoil",
+      keywords: ["Chennai to Nagercoil", "house shifting", "intercity moving", "packers and movers"]
     },
     {
       id: 4,
-      title: "Medical devices Relocation from Chennai to Bangalore",
-      excerpt: "Specialized medical device relocation services with temperature-controlled transportation and careful handling of sensitive equipment.",
+      title: "Medical Devices Relocation from Chennai to Bangalore | Specialist Moving",
+      excerpt: "Specialized medical device relocation services from Chennai to Bangalore with temperature-controlled transportation and careful handling of sensitive equipment. Moving medical devices requires expertise, precision, and compliance with safety regulations. KVT Packers & Movers provides specialized relocation services for hospitals, clinics, and medical facilities, ensuring your sensitive medical equipment reaches Bangalore safely. Our team uses temperature-controlled vehicles, anti-static packaging, and follows strict protocols for handling medical devices. We coordinate with your facility management, handle documentation, and ensure timely delivery to minimize downtime.",
       image: "/img/location/bengalore.jpg",
+      imageAlt: "Medical device relocation from Chennai to Bangalore - Specialist moving services",
       date: "Oct 31, 2024",
       author: "KVT Team",
       readTime: "7 min read",
       category: "Specialist Moving",
-      slug: "medical-devices-relocation-chennai-bangalore"
+      slug: "medical-devices-relocation-chennai-bangalore",
+      keywords: ["medical device relocation", "Chennai to Bangalore", "specialist moving", "temperature controlled"]
     },
     {
       id: 5,
-      title: "Wooden Crate Packing To Abroad",
-      excerpt: "Professional wooden crate packing services for international moves. Custom crating solutions for fragile and valuable items.",
+      title: "Wooden Crate Packing for International Moves | Export Packing Services",
+      excerpt: "Professional wooden crate packing services for international moves from Chennai. Custom crating solutions for fragile items, antiques, electronics, and valuable belongings. Planning to move abroad? KVT Packers & Movers offers expert wooden crate packing services designed to protect your items during long-distance international shipping. Our skilled craftsmen create custom wooden crates tailored to your specific items, ensuring maximum protection against damage, moisture, and handling. We follow international shipping standards, handle all export documentation, and coordinate with shipping lines. Whether you're relocating to the USA, UK, Australia, or any other country, our wooden crate packing ensures your belongings arrive safely.",
       image: "/img/location/abroad.jpg",
+      imageAlt: "Wooden crate packing for international moves - Export packing services Chennai",
       date: "Oct 31, 2024",
       author: "KVT Team",
       readTime: "8 min read",
       category: "International Moving",
-      slug: "wooden-crate-packing-abroad"
+      slug: "wooden-crate-packing-abroad",
+      keywords: ["wooden crate packing", "international moving", "export packing", "Chennai"]
     },
     {
       id: 6,
-      title: "House shifting from Chennai to Bangalore",
-      excerpt: "25 years of experience in house shifting from Chennai to Bangalore. Complete end-to-end moving solutions with insurance coverage.",
+      title: "House Shifting from Chennai to Bangalore | 25 Years Experience",
+      excerpt: "25 years of experience in house shifting from Chennai to Bangalore with complete end-to-end moving solutions and comprehensive insurance coverage. Moving from Chennai to Bangalore? KVT Packers & Movers has been helping families and professionals relocate safely for over two decades. Our Chennai to Bangalore house shifting service includes professional packing with quality materials, secure loading and transportation, real-time tracking, and unpacking assistance at your new home in Bangalore. We handle everything from furniture disassembly to final setup, ensuring a smooth transition. With transparent pricing, timely delivery, and dedicated customer support, we make your Chennai to Bangalore move stress-free.",
       image: "/img/location/bengalore1.jpg",
+      imageAlt: "House shifting from Chennai to Bangalore - Experienced packers and movers",
       date: "Oct 29, 2024",
       author: "KVT Team",
       readTime: "5 min read",
       category: "Intercity Moving",
-      slug: "house-shifting-chennai-bangalore"
+      slug: "house-shifting-chennai-bangalore",
+      keywords: ["Chennai to Bangalore", "house shifting", "intercity moving", "packers and movers"]
     },
     {
       id: 7,
-      title: "House shifting from Chennai to Vellore",
-      excerpt: "Hassle-free house shifting from Chennai to Vellore. Professional team ensures safe and timely delivery of your belongings.",
+      title: "House Shifting from Chennai to Vellore | Reliable Intercity Movers",
+      excerpt: "Hassle-free house shifting services from Chennai to Vellore with professional team ensuring safe and timely delivery of your belongings. Planning a move from Chennai to Vellore? KVT Packers & Movers provides reliable intercity relocation services with complete packing, loading, transportation, and unloading assistance. Our experienced team handles all types of household items including furniture, appliances, electronics, and personal belongings with utmost care. We offer door-to-door service, insurance coverage options, and flexible scheduling to suit your needs. With transparent pricing and dedicated move coordinators, your Chennai to Vellore relocation will be smooth and stress-free.",
       image: "/img/location/vellore.png",
+      imageAlt: "House shifting from Chennai to Vellore - Reliable intercity movers",
       date: "Oct 29, 2024",
       author: "KVT Team",
       readTime: "4 min read",
       category: "Intercity Moving",
-      slug: "house-shifting-chennai-vellore"
+      slug: "house-shifting-chennai-vellore",
+      keywords: ["Chennai to Vellore", "house shifting", "intercity moving"]
     },
     {
       id: 8,
-      title: "House shifting from Chennai to Kakinada",
-      excerpt: "Reliable house shifting services from Chennai to Kakinada. We handle everything from packing to final setup at your new home.",
+      title: "House Shifting from Chennai to Kakinada | Complete Moving Solutions",
+      excerpt: "Reliable house shifting services from Chennai to Kakinada. We handle everything from professional packing to final setup at your new home. Moving from Chennai to Kakinada? KVT Packers & Movers offers comprehensive house shifting services with end-to-end support. Our team provides expert packing using high-quality materials, secure loading and transportation in specialized vehicles, and complete unpacking and setup assistance at your new home in Kakinada. We handle furniture disassembly and reassembly, ensure proper labeling of all boxes, and provide real-time updates throughout the journey. With 25+ years of experience and transparent pricing, your Chennai to Kakinada move will be seamless.",
       image: "/img/location/kakinada1.jpg",
+      imageAlt: "House shifting from Chennai to Kakinada - Complete moving solutions",
       date: "Oct 29, 2024",
       author: "KVT Team",
       readTime: "6 min read",
       category: "Intercity Moving",
-      slug: "house-shifting-chennai-kakinada"
+      slug: "house-shifting-chennai-kakinada",
+      keywords: ["Chennai to Kakinada", "house shifting", "intercity moving"]
     },
     {
       id: 9,
-      title: "Essential Packing Tips for a Smooth Move",
-      excerpt: "Learn the essential packing tips and tricks for a smooth and stress-free moving experience. Expert advice from our moving professionals.",
+      title: "Essential Packing Tips for a Smooth Move | Chennai Moving Guide",
+      excerpt: "Learn essential packing tips and tricks for a smooth, stress-free moving experience in Chennai. Expert advice from KVT Packers & Movers professionals with 25+ years of experience. Whether you're moving locally in Chennai areas like Anna Nagar, Arumbakkam, or Koyambedu, or relocating to another city, proper packing is crucial for protecting your belongings. This comprehensive guide covers everything from choosing the right packing materials to organizing your items room by room. Discover professional techniques for packing fragile items, electronics, furniture, and valuable possessions. Follow our step-by-step checklist to ensure nothing is forgotten and everything arrives safely at your new home.",
       image: "/img/packing_truck.jpg",
+      imageAlt: "Essential packing tips for smooth move - Chennai packers and movers guide",
       date: "Jan 24, 2023",
       author: "KVT Team",
       readTime: "10 min read",
       category: "Moving Tips",
-      slug: "essential-packing-tips-smooth-move"
+      slug: "essential-packing-tips-smooth-move",
+      keywords: ["packing tips", "moving guide", "Chennai", "packers and movers"]
     },
     {
       id: 10,
-      title: "How to Choose the Right Movers for Your Needs",
-      excerpt: "A comprehensive guide to choosing the right moving company. Learn what to look for and questions to ask before hiring movers.",
+      title: "How to Choose the Right Movers for Your Needs | Chennai Guide",
+      excerpt: "A comprehensive guide to choosing the right packers and movers in Chennai. Learn what to look for, questions to ask, and red flags to avoid before hiring movers. Whether you need local packers and movers near you in Anna Nagar, Arumbakkam, Koyambedu, or anywhere in Chennai, this guide helps you make an informed decision. Discover how to verify credentials, compare quotes, check reviews, and understand service inclusions. Learn about insurance coverage, hidden charges, and what to expect during the moving process. With tips from Chennai's trusted moving experts, you'll find reliable packers and movers who deliver quality service at fair prices.",
       image: "/img/team.jpg",
+      imageAlt: "How to choose right movers - Chennai packers and movers guide",
       date: "Dec 24, 2023",
       author: "KVT Team",
       readTime: "12 min read",
       category: "Moving Tips",
-      slug: "how-to-choose-right-movers"
+      slug: "how-to-choose-right-movers",
+      keywords: ["choose movers", "packers and movers", "Chennai", "moving guide"]
     },
     {
       id: 11,
-      title: "What to Expect During a Long-Distance Move",
-      excerpt: "Everything you need to know about long-distance moves. From planning to execution, we cover all aspects of interstate relocation.",
+      title: "What to Expect During a Long-Distance Move | Chennai to Anywhere",
+      excerpt: "Everything you need to know about long-distance moves from Chennai. From planning to execution, we cover all aspects of interstate relocation including packing, transportation, tracking, and delivery. Planning a long-distance move from Chennai to Bangalore, Mumbai, Delhi, or any other city? This comprehensive guide explains the entire process step by step. Learn about pre-move planning, packing timelines, transportation methods, tracking your shipment, delivery schedules, and unpacking. Discover what to expect in terms of costs, timelines, and service quality. With insights from experienced Chennai movers, you'll be well-prepared for your interstate relocation journey.",
       image: "/img/truck.png",
+      imageAlt: "What to expect during long distance move - Chennai to anywhere guide",
       date: "Jun 24, 2024",
       author: "KVT Team",
       readTime: "15 min read",
       category: "Long Distance Moving",
-      slug: "what-to-expect-long-distance-move"
+      slug: "what-to-expect-long-distance-move",
+      keywords: ["long distance move", "interstate moving", "Chennai", "moving guide"]
     },
     {
       id: 12,
-      title: "Corporate Relocation Services in Chennai",
-      excerpt: "Professional corporate relocation services for businesses in Chennai. We handle office moves, equipment relocation, and employee transfers.",
+      title: "Corporate Relocation Services in Chennai | Office Moving Experts",
+      excerpt: "Professional corporate relocation services for businesses in Chennai. We handle office moves, equipment relocation, and employee transfers with minimal downtime. Looking for reliable corporate movers in Chennai? KVT Packers & Movers specializes in office relocations across Chennai including Anna Nagar, Arumbakkam, T Nagar, OMR, and other business districts. Our corporate moving services include IT infrastructure handling, office furniture disassembly and reassembly, confidential document handling, and employee relocation assistance. We work around your business schedule, minimize downtime, and ensure a seamless transition. With 25+ years of experience serving Chennai's leading companies, we deliver professional, efficient corporate relocation services.",
       image: "/img/location/chennai.jpg",
+      imageAlt: "Corporate relocation services in Chennai - Office moving experts",
       date: "Jun 20, 2024",
       author: "KVT Team",
       readTime: "8 min read",
       category: "Corporate Moving",
-      slug: "corporate-relocation-services-chennai"
+      slug: "corporate-relocation-services-chennai",
+      keywords: ["corporate relocation", "office moving", "Chennai", "business relocation"]
     }
   ];
 
@@ -222,7 +246,16 @@ export default function BlogPage() {
         "caption": post.title
       },
       "articleSection": post.category,
-      "timeRequired": post.readTime
+      "timeRequired": post.readTime,
+      "keywords": post.keywords ? post.keywords.join(', ') : `${post.category}, packers and movers, Chennai`,
+      "about": {
+        "@type": "Service",
+        "name": "Packers and Movers Services",
+        "areaServed": {
+          "@type": "City",
+          "name": "Chennai"
+        }
+      }
     }))
   };
 
@@ -330,7 +363,7 @@ export default function BlogPage() {
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={post.image}
-                    alt={post.title}
+                    alt={post.imageAlt || `${post.title} - KVT Packers and Movers Blog Chennai`}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover image-hover"

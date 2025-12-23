@@ -142,6 +142,16 @@ export default function Footer() {
                 Packers and Movers in Arumbakkam
               </Link>
             </li>
+            <li>
+              <Link href="/packers-and-movers-in-koyambedu" className="hover:text-white transition-colors">
+                Packers and Movers in Koyambedu
+              </Link>
+            </li>
+            <li>
+              <Link href="/locations/mogappair" className="hover:text-white transition-colors">
+                Packers and Movers in Mogappair
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

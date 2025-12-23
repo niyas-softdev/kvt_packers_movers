@@ -26,6 +26,8 @@ export default function Navbar() {
         { name: 'Chennai', href: '/locations/chennai' },
         { name: 'Anna Nagar', href: '/locations/anna-nagar' },
         { name: 'Arumbakkam', href: '/locations/arumbakkam' },
+        { name: 'Koyambedu', href: '/packers-and-movers-in-koyambedu' },
+        { name: 'Mogappair', href: '/locations/mogappair' },
       ],
     },
     {
